@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notforsal — Audiovisual Enthusiast</title>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #02050e;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        /* Fluid background animations */
+        @keyframes floatBlob1 {
+            0%, 100% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
+            33% { transform: translate(70px, -90px) scale(1.15) rotate(120deg); }
+            66% { transform: translate(-50px, 60px) scale(0.9) rotate(240deg); }
+        }
+        @keyframes floatBlob2 {
+            0%, 100% { transform: translate(0px, 0px) scale(1) rotate(360deg); }
+            33% { transform: translate(-80px, 80px) scale(1.2) rotate(240deg); }
+            66% { transform: translate(60px, -70px) scale(0.95) rotate(120deg); }
+        }
+        .blob-1 {
+            animation: floatBlob1 22s ease-in-out infinite;
+        }
+        .blob-2 {
+            animation: floatBlob2 26s ease-in-out infinite;
+        }
+        /* Noise Texture */
+        .bg-noise {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.35'/%3E%3C/svg%3E");
+        }
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .glass-card:hover {
+            border-color: rgba(34, 211, 238, 0.4);
+            box-shadow: 0 0 35px rgba(34, 211, 238, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-[#02050e] text-slate-200 selection:bg-cyan-900 selection:text-white">
+
+    <!-- Fluid Background Layer -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute inset-0 bg-[#02050e]"></div>
+        <div class="absolute -top-[15%] -left-[10%] w-[65vw] h-[65vw] rounded-[40%_60%_70%_30%/50%_60%_40%_50%] mix-blend-screen blur-[130px] opacity-75 blob-1" style="background: radial-gradient(circle, rgba(103, 232, 249, 0.85) 0%, rgba(6, 182, 212, 0.5) 45%, transparent 75%);"></div>
+        <div class="absolute top-[25%] -right-[15%] w-[70vw] h-[70vw] rounded-[60%_40%_30%_70%/60%_30%_70%_40%] bg-blue-600/50 mix-blend-screen blur-[150px] opacity-70 blob-2"></div>
+        <div class="absolute -bottom-[15%] left-[20%] w-[55vw] h-[55vw] rounded-[50%_50%_40%_60%/40%_60%_50%_50%] bg-sky-900/60 mix-blend-screen blur-[140px] opacity-80 blob-1"></div>
+        <div class="absolute inset-0 bg-noise opacity-60 mix-blend-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-[#02050e]/80 backdrop-blur-2xl border-b border-white/5 py-5 transition-all duration-700">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold tracking-tighter text-white">Notforsal<span class="text-cyan-400">.</span></a>
+            <div class="hidden md:flex gap-10 text-sm font-medium tracking-wide text-white/80">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#work" class="hover:text-cyan-400 transition-colors">Work</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-300 border border-cyan-500/30 transition-all">
+                <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Let's Talk
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
+        <div class="relative z-10 text-center w-full max-w-4xl mx-auto space-y-6">
+            <span class="inline-block py-1.5 px-4 rounded-full text-xs font-light italic text-cyan-300 bg-cyan-950/60 border border-cyan-800/40">
+                Available for Freelance & Production Work
+            </span>
+            <h1 class="text-6xl md:text-9xl font-bold tracking-tighter text-white drop-shadow-2xl">
+                Notforsal
+            </h1>
+            <p class="text-base md:text-lg text-white font-thin italic max-w-xl mx-auto leading-relaxed">
+                Audiovisual Enthusiast based in Bandung & Cimahi.<br>Crafting cinematic visuals and compelling stories.
+            </p>
+            <div class="pt-6 flex flex-wrap items-center justify-center gap-4">
+                <a href="#work" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-sm hover:bg-cyan-50 transition-all duration-300 shadow-lg shadow-cyan-500/10">
+                    View Showreel <i data-lucide="play" class="w-4 h-4 fill-black"></i>
+                </a>
+                <a href="#contact" class="inline-flex items-center gap-3 px-8 py-4 glass-card text-white rounded-full font-bold text-sm hover:border-cyan-400/50 transition-all duration-300">
+                    Get in Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto relative z-10">
+        <div class="mb-20 flex items-center gap-6">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">The Storyteller</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/30 via-blue-500/10 to-transparent"></div>
+        </div>
+        <div class="grid md:grid-cols-12 gap-12 md:gap-16 items-center">
+            <div class="md:col-span-7 space-y-6 text-sm md:text-base leading-relaxed text-white font-thin italic">
+                <p>
+                    Lulusan Televisi dan Film dari ISBI Bandung yang mendedikasikan diri dalam dunia audiovisual, mengabadikan narasi visual dengan estetika mendalam dan penuh makna.
+                </p>
+                <p>
+                    Berpengalaman dalam memproduksi berbagai karya mulai dari iklan komersial merek, vertikal mini-series, produksi di balik layar (BTS) serial, hingga dokumentasi sinematik pernikahan.
+                </p>
+                <p class="text-xs font-thin italic text-cyan-300/80 pt-2">
+                    Berbasis di Bandung & Cimahi, siap menjangkau berbagai proyek lintas kota.
+                </p>
+            </div>
+            <div class="md:col-span-5 relative w-full aspect-[4/5] rounded-3xl overflow-hidden glass-card p-2 border border-cyan-500/30 shadow-2xl group">
+                <img src="profil.jpeg" alt="Faishal Hafizh - Notforsal" 
+                     onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop'" 
+                     class="w-full h-full object-cover rounded-2xl grayscale-[25%] contrast-125 group-hover:grayscale-0 group-hover:contrast-100 transition-all duration-700 group-hover:scale-105">
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="work" class="py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto relative z-10">
+        <div class="mb-20 flex items-center gap-6">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-white">Showcase</h2>
+            <div class="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/30 via-blue-500/10 to-transparent"></div>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Card 1 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-700 hover:-translate-y-2 shadow-2xl">
+                <div class="aspect-[16/10] w-full relative overflow-hidden bg-black/40 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90"></div>
+                    <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/60 transition-all duration-500 z-10">
+                        <i data-lucide="play" class="w-6 h-6 text-white fill-white ml-0.5"></i>
+                    </div>
+                    <span class="absolute top-5 left-5 px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-md rounded-full text-cyan-100 border border-white/10 z-10">
+                        Commercial
+                    </span>
+                </div>
+                <div class="p-8 space-y-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">Commercial Brand Ads</h3>
+                            <p class="text-cyan-100/60 text-xs font-medium">Various Brands</p>
+                        </div>
+                        <i data-lucide="monitor-play" class="w-6 h-6 text-white/30 group-hover:text-cyan-300 transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-white font-thin italic pt-2">Role: Videographer & Editor</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-700 hover:-translate-y-2 shadow-2xl">
+                <div class="aspect-[16/10] w-full relative overflow-hidden bg-black/40 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90"></div>
+                    <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/60 transition-all duration-500 z-10">
+                        <i data-lucide="play" class="w-6 h-6 text-white fill-white ml-0.5"></i>
+                    </div>
+                    <span class="absolute top-5 left-5 px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-md rounded-full text-cyan-100 border border-white/10 z-10">
+                        Narrative
+                    </span>
+                </div>
+                <div class="p-8 space-y-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">Vertical Mini-Series</h3>
+                            <p class="text-cyan-100/60 text-xs font-medium">MINARI COMMO CULT</p>
+                        </div>
+                        <i data-lucide="film" class="w-6 h-6 text-white/30 group-hover:text-cyan-300 transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-white font-thin italic pt-2">Role: DoP & Editor</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-700 hover:-translate-y-2 shadow-2xl">
+                <div class="aspect-[16/10] w-full relative overflow-hidden bg-black/40 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90"></div>
+                    <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/60 transition-all duration-500 z-10">
+                        <i data-lucide="play" class="w-6 h-6 text-white fill-white ml-0.5"></i>
+                    </div>
+                    <span class="absolute top-5 left-5 px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-md rounded-full text-cyan-100 border border-white/10 z-10">
+                        BTS / Documentary
+                    </span>
+                </div>
+                <div class="p-8 space-y-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">AGASKAR (Netflix Series)</h3>
+                            <p class="text-cyan-100/60 text-xs font-medium">Unlimited Production</p>
+                        </div>
+                        <i data-lucide="clapperboard" class="w-6 h-6 text-white/30 group-hover:text-cyan-300 transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-white font-thin italic pt-2">Role: Behind-The-Scenes Videographer</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="glass-card rounded-2xl overflow-hidden group cursor-pointer transition-all duration-700 hover:-translate-y-2 shadow-2xl">
+                <div class="aspect-[16/10] w-full relative overflow-hidden bg-black/40 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-90"></div>
+                    <div class="w-16 h-16 rounded-full glass-card flex items-center justify-center border border-white/20 group-hover:scale-110 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/60 transition-all duration-500 z-10">
+                        <i data-lucide="play" class="w-6 h-6 text-white fill-white ml-0.5"></i>
+                    </div>
+                    <span class="absolute top-5 left-5 px-4 py-1.5 text-[10px] font-bold tracking-widest uppercase bg-black/60 backdrop-blur-md rounded-full text-cyan-100 border border-white/10 z-10">
+                        Wedding
+                    </span>
+                </div>
+                <div class="p-8 space-y-2">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">Wedding & Pre-wedding</h3>
+                            <p class="text-cyan-100/60 text-xs font-medium">MONOFOTO</p>
+                        </div>
+                        <i data-lucide="video" class="w-6 h-6 text-white/30 group-hover:text-cyan-300 transition-colors"></i>
+                    </div>
+                    <p class="text-xs text-white font-thin italic pt-2">Role: Cinematographer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-36 mt-10 border-t border-white/5 overflow-hidden z-10">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <h2 class="text-4xl md:text-7xl font-bold tracking-tighter text-white">
+                Let's create something cinematic.
+            </h2>
+            <p class="text-xs md:text-sm text-white font-thin italic">
+                Available for freelance projects, collaborations, and full-time opportunities.
+            </p>
+            <div class="flex flex-wrap justify-center gap-5 pt-4">
+                <a href="mailto:ask.faishal@gmail.com" class="flex items-center gap-3 px-7 py-3.5 bg-white/5 text-white border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 backdrop-blur-md rounded-full text-xs font-bold transition-all duration-500 hover:-translate-y-1">
+                    <i data-lucide="mail" class="w-4 h-4 text-cyan-400"></i> ask.faishal@gmail.com
+                </a>
+                <a href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-7 py-3.5 bg-white/5 text-white border border-white/10 hover:border-cyan-400/50 hover:bg-white/10 backdrop-blur-md rounded-full text-xs font-bold transition-all duration-500 hover:-translate-y-1">
+                    <i data-lucide="instagram" class="w-4 h-4 text-cyan-400"></i> @faishalhafizhh
+                </a>
+                <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 px-7 py-3.5 bg-white text-black rounded-full text-xs font-bold hover:bg-cyan-50 transition-all duration-500 hover:-translate-y-1 shadow-lg shadow-cyan-500/20">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp (087711475609)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-10 text-center text-xs text-white/30 font-medium border-t border-white/5">
+        <p>© 2026 Notforsal. All rights reserved.</p>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
