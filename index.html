@@ -41,10 +41,10 @@
         }
         
         /* Clean minimal card hover */
-        .showcase-card {
+        .showcase-card, .category-card {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .showcase-card:hover {
+        .showcase-card:hover, .category-card:hover {
             transform: translateY(-6px);
         }
         
@@ -76,12 +76,6 @@
             transform-origin: bottom left;
         }
 
-        /* Category Filter Button Active State */
-        .category-btn.active {
-            background-color: #111111;
-            color: #ffffff;
-        }
-        
         /* Motion blur class */
         .scroll-blur-effect {
             transition: filter 0.2s ease-out, transform 0.2s ease-out;
@@ -116,7 +110,7 @@
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4">
                 <a href="#work" class="inline-flex items-center gap-3 px-8 py-4 bg-nike-black text-white rounded-full font-bold text-sm uppercase tracking-widest hover:bg-gray-800 transition-colors">
-                    View Showreel
+                    View Showcase
                 </a>
             </div>
         </div>
@@ -148,122 +142,189 @@
         </div>
     </section>
 
-    <!-- Showcase Section with Category Filters -->
+    <!-- Showcase Section (Hierarchical Category First Flow) -->
     <section id="work" class="py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-blur-effect">
-        <div class="mb-12 border-b-2 border-gray-200 pb-6">
-            <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tighter text-nike-black mb-8">SHOWCASE</h2>
-            
-            <!-- Category Filter Buttons -->
-            <div class="flex flex-wrap gap-3">
-                <button data-filter="all" class="category-btn active px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-nike-black transition-colors">
-                    ALL WORKS
-                </button>
-                <button data-filter="creative-journey" class="category-btn px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-nike-black text-nike-black hover:bg-nike-black hover:text-white transition-colors">
-                    CREATIVE JOURNEY
-                </button>
-                <button data-filter="short-movie" class="category-btn px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-nike-black text-nike-black hover:bg-nike-black hover:text-white transition-colors">
-                    SHORT MOVIE
-                </button>
-                <button data-filter="event-doc" class="category-btn px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-nike-black text-nike-black hover:bg-nike-black hover:text-white transition-colors">
-                    EVENT DOCUMENTATION
-                </button>
-                <button data-filter="wedding" class="category-btn px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-nike-black text-nike-black hover:bg-nike-black hover:text-white transition-colors">
-                    WEDDING / PREWEDDING
-                </button>
-                <button data-filter="social" class="category-btn px-5 py-2.5 rounded-full text-[10px] sm:text-xs font-bold uppercase tracking-widest border-2 border-nike-black text-nike-black hover:bg-nike-black hover:text-white transition-colors">
-                    SOCIAL CONTENT
-                </button>
+        
+        <!-- STEP 1: CATEGORY SELECTION VIEW -->
+        <div id="categorySelectionView">
+            <div class="mb-12 border-b-2 border-gray-200 pb-6">
+                <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tighter text-nike-black mb-3">SHOWCASE</h2>
+                <p class="text-nike-darkgray font-medium text-sm md:text-base uppercase tracking-wider">Select a category to explore selected works</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Category 1 -->
+                <div data-target-category="creative-journey" class="category-card bg-nike-gray p-8 sm:p-10 border-2 border-nike-black cursor-pointer group flex flex-col justify-between h-[280px]">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">01 / Category</span>
+                        <h3 class="text-3xl sm:text-4xl font-display uppercase tracking-tight text-nike-black mt-2 group-hover:underline">CREATIVE JOURNEY</h3>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">Exploration & BTS</span>
+                        <div class="w-10 h-10 rounded-full bg-nike-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                            →
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2 -->
+                <div data-target-category="short-movie" class="category-card bg-nike-gray p-8 sm:p-10 border-2 border-nike-black cursor-pointer group flex flex-col justify-between h-[280px]">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">02 / Category</span>
+                        <h3 class="text-3xl sm:text-4xl font-display uppercase tracking-tight text-nike-black mt-2 group-hover:underline">SHORT MOVIE</h3>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">Cinematic Fiction</span>
+                        <div class="w-10 h-10 rounded-full bg-nike-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                            →
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3 -->
+                <div data-target-category="event-doc" class="category-card bg-nike-gray p-8 sm:p-10 border-2 border-nike-black cursor-pointer group flex flex-col justify-between h-[280px]">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">03 / Category</span>
+                        <h3 class="text-3xl sm:text-4xl font-display uppercase tracking-tight text-nike-black mt-2 group-hover:underline">EVENT DOCUMENTATION</h3>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">Live & Gathering</span>
+                        <div class="w-10 h-10 rounded-full bg-nike-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                            →
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4 -->
+                <div data-target-category="wedding" class="category-card bg-nike-gray p-8 sm:p-10 border-2 border-nike-black cursor-pointer group flex flex-col justify-between h-[280px]">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">04 / Category</span>
+                        <h3 class="text-3xl sm:text-4xl font-display uppercase tracking-tight text-nike-black mt-2 group-hover:underline">WEDDING / PREWEDDING</h3>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">Cinematic Moments</span>
+                        <div class="w-10 h-10 rounded-full bg-nike-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                            →
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5 -->
+                <div data-target-category="social" class="category-card bg-nike-gray p-8 sm:p-10 border-2 border-nike-black cursor-pointer group flex flex-col justify-between h-[280px]">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">05 / Category</span>
+                        <h3 class="text-3xl sm:text-4xl font-display uppercase tracking-tight text-nike-black mt-2 group-hover:underline">SOCIAL CONTENT</h3>
+                    </div>
+                    <div class="flex items-center justify-between pt-6 border-t border-gray-300">
+                        <span class="text-xs font-bold uppercase tracking-widest text-nike-darkgray">Vertical Ads & Reels</span>
+                        <div class="w-10 h-10 rounded-full bg-nike-black text-white flex items-center justify-center group-hover:bg-gray-800 transition-colors">
+                            →
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Showcase Cards Grid -->
-        <div class="grid md:grid-cols-2 gap-x-8 gap-y-16">
+
+        <!-- STEP 2: VIDEO LIST VIEW (Hidden by Default) -->
+        <div id="videoListView" class="hidden">
+            <div class="mb-12 border-b-2 border-gray-200 pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+                <div>
+                    <button id="backToCategoriesBtn" class="inline-flex items-center gap-2 mb-4 text-xs font-bold uppercase tracking-widest text-nike-darkgray hover:text-nike-black transition-colors">
+                        ← Back to Categories
+                    </button>
+                    <h2 id="activeCategoryTitle" class="text-4xl md:text-6xl font-display uppercase tracking-tighter text-nike-black">CATEGORY NAME</h2>
+                </div>
+            </div>
             
-            <!-- 1. Creative Journey -->
-            <div data-category="creative-journey" data-video="" class="showcase-card group cursor-pointer">
-                <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                            <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+            <!-- Showcase Videos Grid -->
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-16">
+                
+                <!-- 1. Creative Journey Item -->
+                <div data-category="creative-journey" data-video="" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
+                        <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                            </div>
                         </div>
+                        <div class="w-full h-full bg-zinc-800"></div> 
                     </div>
-                    <div class="w-full h-full bg-zinc-800"></div> 
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Creative Journey</p>
+                        <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Visual Exploration</h3>
+                        <p class="text-sm text-nike-darkgray font-medium">Role: Director & Editor</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Creative Journey</p>
-                    <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Visual Exploration</h3>
-                    <p class="text-sm text-nike-darkgray font-medium">Role: Director & Editor</p>
-                </div>
-            </div>
 
-            <!-- 2. Short Movie -->
-            <div data-category="short-movie" data-video="" class="showcase-card group cursor-pointer">
-                <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                            <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                <!-- 2. Short Movie Item -->
+                <div data-category="short-movie" data-video="" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
+                        <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                            </div>
                         </div>
+                        <div class="w-full h-full bg-zinc-700"></div>
                     </div>
-                    <div class="w-full h-full bg-zinc-700"></div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Short Movie</p>
+                        <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Cinematic Narrative</h3>
+                        <p class="text-sm text-nike-darkgray font-medium">Role: Cinematographer</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Short Movie</p>
-                    <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Cinematic Narrative</h3>
-                    <p class="text-sm text-nike-darkgray font-medium">Role: Cinematographer</p>
-                </div>
-            </div>
 
-            <!-- 3. Event Documentation -->
-            <div data-category="event-doc" data-video="" class="showcase-card group cursor-pointer">
-                <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                            <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                <!-- 3. Event Documentation Item -->
+                <div data-category="event-doc" data-video="" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
+                        <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                            </div>
                         </div>
+                        <div class="w-full h-full bg-zinc-800"></div>
                     </div>
-                    <div class="w-full h-full bg-zinc-800"></div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Event Documentation</p>
+                        <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Live Event & Tour</h3>
+                        <p class="text-sm text-nike-darkgray font-medium">Role: Videographer</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Event Documentation</p>
-                    <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Live Event & Tour</h3>
-                    <p class="text-sm text-nike-darkgray font-medium">Role: Videographer</p>
-                </div>
-            </div>
 
-            <!-- 4. Wedding / Prewedding (Using provided GDrive Link) -->
-            <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="showcase-card group cursor-pointer">
-                <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                            <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                <!-- 4. Wedding / Prewedding Item (GDrive Link) -->
+                <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
+                        <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                            </div>
                         </div>
+                        <div class="w-full h-full bg-zinc-900"></div>
                     </div>
-                    <div class="w-full h-full bg-zinc-900"></div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Wedding / Prewedding</p>
+                        <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Nida & Rizky</h3>
+                        <p class="text-sm text-nike-darkgray font-medium">Role: Cinematographer (Monofoto)</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Wedding / Prewedding</p>
-                    <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Nida & Rizky</h3>
-                    <p class="text-sm text-nike-darkgray font-medium">Role: Cinematographer (Monofoto)</p>
-                </div>
-            </div>
 
-            <!-- 5. Social Content -->
-            <div data-category="social" data-video="" class="showcase-card group cursor-pointer">
-                <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
-                    <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
-                        <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
-                            <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                <!-- 5. Social Content Item -->
+                <div data-category="social" data-video="" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-6">
+                        <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-6 h-6 fill-current ml-1"></i>
+                            </div>
                         </div>
+                        <div class="w-full h-full bg-zinc-700"></div>
                     </div>
-                    <div class="w-full h-full bg-zinc-700"></div>
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Social Content</p>
+                        <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Vertical Campaigns</h3>
+                        <p class="text-sm text-nike-darkgray font-medium">Role: Videographer & Editor</p>
+                    </div>
                 </div>
-                <div>
-                    <p class="text-xs font-bold uppercase tracking-widest text-nike-darkgray mb-2">Social Content</p>
-                    <h3 class="text-3xl font-display uppercase tracking-tight text-nike-black mb-1">Vertical Campaigns</h3>
-                    <p class="text-sm text-nike-darkgray font-medium">Role: Videographer & Editor</p>
-                </div>
-            </div>
 
+            </div>
         </div>
     </section>
 
@@ -278,16 +339,20 @@
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <!-- Email Button -->
                 <a href="mailto:ask.faishal@gmail.com" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-white text-nike-black rounded-full text-sm font-bold uppercase tracking-widest hover:bg-gray-200 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-nike-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     Email Me
                 </a>
+                <!-- WhatsApp Button -->
                 <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-nike-black transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                     WhatsApp
                 </a>
-                <a href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center w-[52px] h-[52px] bg-transparent border-2 border-gray-600 text-gray-400 rounded-full hover:border-white hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <!-- Instagram Button with Explicit Inline SVG -->
+                <a href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-nike-black transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    Instagram
                 </a>
             </div>
         </div>
@@ -303,7 +368,7 @@
         <div id="modalBox" class="relative w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
             <!-- Close Button -->
             <button id="closeVideoBtn" class="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white hover:bg-gray-200 text-nike-black flex items-center justify-center transition-colors shadow-lg">
-                <i data-lucide="x" class="w-6 h-6"></i>
+                ✕
             </button>
             <!-- Video Player Frame -->
             <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -314,27 +379,48 @@
     <script>
         lucide.createIcons();
 
-        // Category Filter Logic
-        const filterBtns = document.querySelectorAll('.category-btn');
+        // Category Drill-Down Navigation Logic
+        const categorySelectionView = document.getElementById('categorySelectionView');
+        const videoListView = document.getElementById('videoListView');
+        const activeCategoryTitle = document.getElementById('activeCategoryTitle');
+        const backToCategoriesBtn = document.getElementById('backToCategoriesBtn');
+        const categoryCards = document.querySelectorAll('.category-card');
         const showcaseCards = document.querySelectorAll('.showcase-card');
 
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active state from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        const categoryNames = {
+            'creative-journey': 'CREATIVE JOURNEY',
+            'short-movie': 'SHORT MOVIE',
+            'event-doc': 'EVENT DOCUMENTATION',
+            'wedding': 'WEDDING / PREWEDDING',
+            'social': 'SOCIAL CONTENT'
+        };
 
-                const filter = btn.getAttribute('data-filter');
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const selectedCategory = card.getAttribute('data-target-category');
+                
+                // Update header title
+                activeCategoryTitle.textContent = categoryNames[selectedCategory] || 'SHOWCASE';
 
-                showcaseCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    if (filter === 'all' || filter === category) {
-                        card.style.display = 'block';
+                // Filter visible videos
+                showcaseCards.forEach(videoCard => {
+                    if (videoCard.getAttribute('data-category') === selectedCategory) {
+                        videoCard.style.display = 'block';
                     } else {
-                        card.style.display = 'none';
+                        videoCard.style.display = 'none';
                     }
                 });
+
+                // Switch views
+                categorySelectionView.classList.add('hidden');
+                videoListView.classList.remove('hidden');
             });
+        });
+
+        // Back to Category Selection
+        backToCategoriesBtn.addEventListener('click', () => {
+            videoListView.classList.add('hidden');
+            categorySelectionView.classList.remove('hidden');
         });
 
         // Video Modal Handler
