@@ -42,7 +42,7 @@
         
         /* Clean minimal card hover */
         .showcase-card {
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .showcase-card:hover {
             transform: translateY(-4px);
@@ -53,6 +53,11 @@
         }
         .showcase-card:hover img, .showcase-card:hover .video-overlay {
             transform: scale(1.03);
+        }
+
+        /* Category row hover */
+        .category-card {
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         /* Nike-style underline hover for links */
@@ -84,7 +89,7 @@
         /* Scroll Reveal Text Animation */
         .scroll-reveal {
             opacity: 0;
-            transform: translateY(35px);
+            transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
@@ -232,7 +237,7 @@
         </div>
 
         <!-- STEP 2: VIDEO LIST VIEW (3-Column Grid) -->
-        <div id="videoListView" class="hidden">
+        <div id="videoListView" class="hidden opacity-0 transform translate-y-4 transition-all duration-500 ease-out">
             <div class="mb-8 border-b-2 border-gray-200 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
                     <button id="backToCategoriesBtn" class="inline-flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-widest text-nike-darkgray hover:text-nike-black transition-colors">
@@ -247,7 +252,7 @@
                 
                 <!-- 1. Creative Journey Item -->
                 <div data-category="creative-journey" data-video="" class="showcase-card group cursor-pointer">
-                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
@@ -258,13 +263,13 @@
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-widest text-nike-darkgray mb-1">Creative Journey</p>
                         <h3 class="text-2xl font-display uppercase tracking-tight text-nike-black mb-1">Visual Exploration</h3>
-                        <p class="text-xs text-nike-darkgray font-medium">Role: Director & Editor</p>
+                        <p class="text-xs text-nike-darkgray font-medium">Role: Videographer & Editor</p>
                     </div>
                 </div>
 
                 <!-- 2. Short Movie Item -->
                 <div data-category="short-movie" data-video="" class="showcase-card group cursor-pointer">
-                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
@@ -275,13 +280,13 @@
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-widest text-nike-darkgray mb-1">Short Movie</p>
                         <h3 class="text-2xl font-display uppercase tracking-tight text-nike-black mb-1">Cinematic Narrative</h3>
-                        <p class="text-xs text-nike-darkgray font-medium">Role: Cinematographer</p>
+                        <p class="text-xs text-nike-darkgray font-medium">Role: Videographer & Editor</p>
                     </div>
                 </div>
 
                 <!-- 3. Event Documentation Item -->
                 <div data-category="event-doc" data-video="" class="showcase-card group cursor-pointer">
-                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
@@ -292,30 +297,34 @@
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-widest text-nike-darkgray mb-1">Event Documentation</p>
                         <h3 class="text-2xl font-display uppercase tracking-tight text-nike-black mb-1">Live Event & Tour</h3>
-                        <p class="text-xs text-nike-darkgray font-medium">Role: Videographer</p>
+                        <p class="text-xs text-nike-darkgray font-medium">Role: Videographer & Editor</p>
                     </div>
                 </div>
 
-                <!-- 4. Wedding / Prewedding Item (GDrive Link) -->
+                <!-- 4. Wedding / Prewedding Item (Fixed GDrive Video URL + Thumbnail) -->
                 <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="showcase-card group cursor-pointer">
-                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <div class="w-full h-full bg-zinc-900"></div>
+                        <!-- Automatic Google Drive Thumbnail -->
+                        <img src="https://lh3.googleusercontent.com/d/16hRn-XdYlDBfLGXBvJKHH1TOx_aMtjQt" 
+                             alt="Pre-wedding Nida & Rizky" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
                     </div>
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-widest text-nike-darkgray mb-1">Wedding / Prewedding</p>
                         <h3 class="text-2xl font-display uppercase tracking-tight text-nike-black mb-1">Nida & Rizky</h3>
-                        <p class="text-xs text-nike-darkgray font-medium">Role: Cinematographer (Monofoto)</p>
+                        <p class="text-xs text-nike-darkgray font-medium">Role: Videographer & Editor</p>
                     </div>
                 </div>
 
                 <!-- 5. Social Content Item -->
                 <div data-category="social" data-video="" class="showcase-card group cursor-pointer">
-                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
@@ -369,11 +378,11 @@
         <p>© 2026 NOTFORSAL. ALL RIGHTS RESERVED.</p>
     </footer>
 
-    <!-- Video Modal Container -->
-    <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-white/95 backdrop-blur-xl hidden transition-all duration-300">
-        <div id="modalBox" class="relative w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl">
+    <!-- Video Modal Container (Smooth Scale & Fade Transition) -->
+    <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out">
+        <div id="modalBox" class="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-500 ease-out">
             <!-- Close Button -->
-            <button id="closeVideoBtn" class="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white hover:bg-gray-200 text-nike-black flex items-center justify-center transition-colors shadow-lg">
+            <button id="closeVideoBtn" class="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">
                 ✕
             </button>
             <!-- Video Player Frame -->
@@ -385,7 +394,7 @@
     <script>
         lucide.createIcons();
 
-        // 1. Scroll Reveal Animation Logic (IntersectionObserver)
+        // 1. Scroll Reveal Animation Logic
         const revealElements = document.querySelectorAll('.scroll-reveal');
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
@@ -395,13 +404,13 @@
             });
         }, {
             root: null,
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.08,
+            rootMargin: '0px 0px -40px 0px'
         });
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // 2. Category Drill-Down Navigation Logic
+        // 2. Smooth Category Drill-Down Navigation
         const categorySelectionView = document.getElementById('categorySelectionView');
         const videoListView = document.getElementById('videoListView');
         const activeCategoryTitle = document.getElementById('activeCategoryTitle');
@@ -417,14 +426,32 @@
             'social': 'SOCIAL CONTENT'
         };
 
+        function switchViewSmooth(hideEl, showEl) {
+            hideEl.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+            hideEl.style.opacity = '0';
+            hideEl.style.transform = 'translateY(-15px)';
+
+            setTimeout(() => {
+                hideEl.classList.add('hidden');
+                hideEl.style.transform = '';
+
+                showEl.classList.remove('hidden');
+                showEl.style.opacity = '0';
+                showEl.style.transform = 'translateY(15px)';
+                showEl.style.transition = 'opacity 0.4s ease-out, transform 0.4s ease-out';
+
+                void showEl.offsetWidth; // Trigger reflow
+
+                showEl.style.opacity = '1';
+                showEl.style.transform = 'translateY(0)';
+            }, 300);
+        }
+
         categoryCards.forEach(card => {
             card.addEventListener('click', () => {
                 const selectedCategory = card.getAttribute('data-target-category');
-                
-                // Update header title
                 activeCategoryTitle.textContent = categoryNames[selectedCategory] || 'SHOWCASE';
 
-                // Filter visible videos
                 showcaseCards.forEach(videoCard => {
                     if (videoCard.getAttribute('data-category') === selectedCategory) {
                         videoCard.style.display = 'block';
@@ -433,19 +460,15 @@
                     }
                 });
 
-                // Switch views
-                categorySelectionView.classList.add('hidden');
-                videoListView.classList.remove('hidden');
+                switchViewSmooth(categorySelectionView, videoListView);
             });
         });
 
-        // Back to Category Selection
         backToCategoriesBtn.addEventListener('click', () => {
-            videoListView.classList.add('hidden');
-            categorySelectionView.classList.remove('hidden');
+            switchViewSmooth(videoListView, categorySelectionView);
         });
 
-        // 3. Video Modal Handler
+        // 3. Smooth Video Modal Handler
         const videoModal = document.getElementById('videoModal');
         const modalBox = document.getElementById('modalBox');
         const videoIframe = document.getElementById('videoIframe');
@@ -456,48 +479,60 @@
                 let videoUrl = card.getAttribute('data-video');
                 if (!videoUrl) return;
 
-                // Google Drive Handler
+                // Drive Handler (safely extract ID)
                 if (videoUrl.includes('drive.google.com')) {
-                    let embedUrl = videoUrl.replace(/\/view.*$/, '/preview');
-                    videoIframe.src = embedUrl;
-                    modalBox.className = "relative w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl";
-                }
-                // Instagram Handler
-                else if (videoUrl.includes('instagram.com')) {
+                    const match = videoUrl.match(/\/d\/([^\/]+)/);
+                    if (match && match[1]) {
+                        videoIframe.src = `https://drive.google.com/file/d/${match[1]}/preview`;
+                    } else {
+                        videoIframe.src = videoUrl;
+                    }
+                } else if (videoUrl.includes('instagram.com')) {
                     let cleanUrl = videoUrl.split('?')[0];
                     if (!cleanUrl.endsWith('/')) cleanUrl += '/';
                     videoIframe.src = cleanUrl + 'embed/';
-                    modalBox.className = "relative w-full max-w-sm aspect-[9/16] max-h-[85vh] bg-black rounded-xl overflow-hidden shadow-2xl";
-                } 
-                // YouTube / Vimeo Handler
-                else {
+                } else {
                     if (videoUrl.includes('youtube.com') || videoUrl.includes('vimeo.com')) {
                         videoUrl += videoUrl.includes('?') ? '&autoplay=1' : '?autoplay=1';
                     }
                     videoIframe.src = videoUrl;
-                    modalBox.className = "relative w-full max-w-6xl aspect-video bg-black rounded-xl overflow-hidden shadow-2xl";
                 }
 
-                videoModal.classList.remove('hidden');
+                // Smoothly fade in modal
+                videoModal.classList.remove('opacity-0', 'pointer-events-none');
+                videoModal.classList.add('opacity-100', 'pointer-events-auto');
+
+                setTimeout(() => {
+                    modalBox.classList.remove('scale-95', 'opacity-0');
+                    modalBox.classList.add('scale-100', 'opacity-100');
+                }, 20);
+
                 document.body.style.overflow = 'hidden';
             });
         });
 
-        function closeVideo() {
-            videoModal.classList.add('hidden');
-            videoIframe.src = '';
-            document.body.style.overflow = '';
+        function closeModal() {
+            modalBox.classList.remove('scale-100', 'opacity-100');
+            modalBox.classList.add('scale-95', 'opacity-0');
+
+            videoModal.classList.remove('opacity-100', 'pointer-events-auto');
+            videoModal.classList.add('opacity-0', 'pointer-events-none');
+
+            setTimeout(() => {
+                videoIframe.src = '';
+                document.body.style.overflow = '';
+            }, 400);
         }
 
-        closeVideoBtn.addEventListener('click', closeVideo);
+        closeVideoBtn.addEventListener('click', closeModal);
         videoModal.addEventListener('click', (e) => {
-            if (e.target === videoModal) closeVideo();
+            if (e.target === videoModal) closeModal();
         });
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !videoModal.classList.contains('hidden')) closeVideo();
+            if (e.key === 'Escape' && !videoModal.classList.contains('pointer-events-none')) closeModal();
         });
 
-        // 4. Subtle Motion Blur Scroll Effect (Tuned down to max 2px)
+        // 4. Subtle Motion Blur Scroll Effect
         let lastScrollTop = window.pageYOffset;
         let scrollTimeout;
 
@@ -506,7 +541,7 @@
             let scrollDelta = Math.abs(st - lastScrollTop);
             lastScrollTop = st;
 
-            let blurAmount = Math.min(scrollDelta * 0.04, 2);
+            let blurAmount = Math.min(scrollDelta * 0.03, 1.5);
 
             const blurElements = document.querySelectorAll('.scroll-blur-effect');
             blurElements.forEach(el => {
