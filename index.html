@@ -267,20 +267,24 @@
                     </div>
                 </div>
 
-                <!-- 2. Short Movie Item -->
-                <div data-category="short-movie" data-video="" class="showcase-card group cursor-pointer">
+                <!-- 2. Short Movie Item (Marandang Documentary) -->
+                <div data-category="short-movie" data-video="https://www.youtube.com/embed/Bthllhycpss" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-nike-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <div class="w-full h-full bg-zinc-700"></div>
+                        <!-- YouTube Thumbnail -->
+                        <img src="https://img.youtube.com/vi/Bthllhycpss/hqdefault.jpg" 
+                             alt="Marandang Documentary" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
                     </div>
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-widest text-nike-darkgray mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-nike-black mb-1">Cinematic Narrative</h3>
-                        <p class="text-xs text-nike-darkgray font-medium">Role: Videographer & Editor</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-nike-black mb-1">Marandang Documentary</h3>
+                        <p class="text-xs text-nike-darkgray font-medium">Role: Director of Photography</p>
                     </div>
                 </div>
 
@@ -301,7 +305,7 @@
                     </div>
                 </div>
 
-                <!-- 4. Wedding / Prewedding Item (Fixed GDrive Video URL + Thumbnail) -->
+                <!-- 4. Wedding / Prewedding Item -->
                 <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-gray-200 mb-4 rounded-lg">
                         <div class="video-overlay absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors z-10 flex items-center justify-center">
@@ -378,7 +382,7 @@
         <p>© 2026 NOTFORSAL. ALL RIGHTS RESERVED.</p>
     </footer>
 
-    <!-- Video Modal Container (Smooth Scale & Fade Transition) -->
+    <!-- Video Modal Container -->
     <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out">
         <div id="modalBox" class="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl transform scale-95 opacity-0 transition-all duration-500 ease-out">
             <!-- Close Button -->
@@ -492,7 +496,7 @@
                     if (!cleanUrl.endsWith('/')) cleanUrl += '/';
                     videoIframe.src = cleanUrl + 'embed/';
                 } else {
-                    if (videoUrl.includes('youtube.com') || videoUrl.includes('vimeo.com')) {
+                    if (videoUrl.includes('youtube.com') || videoUrl.includes('vimeo.com') || videoUrl.includes('youtu.be')) {
                         videoUrl += videoUrl.includes('?') ? '&autoplay=1' : '?autoplay=1';
                     }
                     videoIframe.src = videoUrl;
