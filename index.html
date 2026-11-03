@@ -167,7 +167,7 @@
         <!-- STEP 1: CATEGORY SELECTION VIEW (Full-Width Rows) -->
         <div id="categorySelectionView">
             <div class="mb-10 border-b border-zinc-800 pb-4 scroll-reveal">
-                <h2 class="text-4xl md:text-6xl font-display tracking-tighter text-white mb-2">Showcase</h2>
+                <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tighter text-white mb-2">SHOWCASE</h2>
                 <p class="text-zinc-400 font-medium text-xs md:text-sm uppercase tracking-wider">Select a category to explore selected works</p>
             </div>
 
@@ -241,7 +241,8 @@
         <div id="videoListView" class="hidden opacity-0 transform translate-y-4 transition-all duration-500 ease-out">
             <div class="mb-8 border-b border-zinc-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
-                    <button id="backToCategoriesBtn" class="inline-flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">
+                    <!-- Top Back Button -->
+                    <button class="backToCategoriesBtn inline-flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">
                         ← Back to Categories
                     </button>
                     <h2 id="activeCategoryTitle" class="text-3xl md:text-5xl font-display uppercase tracking-tighter text-white">CATEGORY NAME</h2>
@@ -635,6 +636,13 @@
                 </div>
 
             </div>
+
+            <!-- Bottom Back Button for Easy Mobile Navigation -->
+            <div class="mt-14 text-center border-t border-zinc-800/80 pt-8">
+                <button class="backToCategoriesBtn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-all shadow-lg active:scale-95">
+                    ← Back to Categories
+                </button>
+            </div>
         </div>
     </section>
 
@@ -709,9 +717,10 @@
         const categorySelectionView = document.getElementById('categorySelectionView');
         const videoListView = document.getElementById('videoListView');
         const activeCategoryTitle = document.getElementById('activeCategoryTitle');
-        const backToCategoriesBtn = document.getElementById('backToCategoriesBtn');
+        const backToCategoriesBtns = document.querySelectorAll('.backToCategoriesBtn');
         const categoryCards = document.querySelectorAll('.category-card');
         const showcaseCards = document.querySelectorAll('.showcase-card');
+        const workSection = document.getElementById('work');
 
         const categoryNames = {
             'creative-journey': 'CREATIVE JOURNEY',
@@ -742,10 +751,16 @@
             }, 300);
         }
 
+        function goBackToCategories() {
+            if (videoListView.classList.contains('hidden')) return;
+            switchViewSmooth(videoListView, categorySelectionView);
+            workSection.scrollIntoView({ behavior: 'smooth' });
+        }
+
         categoryCards.forEach(card => {
             card.addEventListener('click', () => {
                 const selectedCategory = card.getAttribute('data-target-category');
-                activeCategoryTitle.textContent = categoryNames[selectedCategory] || 'Showcase';
+                activeCategoryTitle.textContent = categoryNames[selectedCategory] || 'SHOWCASE';
 
                 showcaseCards.forEach(videoCard => {
                     if (videoCard.getAttribute('data-category') === selectedCategory) {
@@ -759,11 +774,53 @@
             });
         });
 
-        backToCategoriesBtn.addEventListener('click', () => {
-            switchViewSmooth(videoListView, categorySelectionView);
+        // Handle Back Buttons
+        backToCategoriesBtns.forEach(btn => {
+            btn.addEventListener('click', goBackToCategories);
         });
 
-        // 3. Smooth Video Modal Handler
+        // 3. Gesture Navigation (Mobile Touch & MacBook Trackpad)
+        
+        // Touch Swipe Gesture for Mobile (Swipe Horizontal)
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        videoListView.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        videoListView.addEventListener('touchend', (e) => {
+            const touchEndX = e.changedTouches[0].screenX;
+            const touchEndY = e.changedTouches[0].screenY;
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+
+            // Pastikan pergerakan horizontal dominan (bukan scroll vertikal) dan jarak usapan cukup
+            if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > 65) {
+                goBackToCategories();
+            }
+        }, { passive: true });
+
+        // MacBook Trackpad Two-Finger Horizontal Scroll Gesture
+        let isWheelCooldown = false;
+
+        window.addEventListener('wheel', (e) => {
+            if (videoListView.classList.contains('hidden')) return;
+
+            // Deteksi usapan 2 jari horizontal pada trackpad MacBook
+            if (Math.abs(e.deltaX) > 35 && Math.abs(e.deltaX) > Math.abs(e.deltaY) && !isWheelCooldown) {
+                isWheelCooldown = true;
+                goBackToCategories();
+
+                // Cooldown agar gesture tidak terpicu berkali-kali
+                setTimeout(() => {
+                    isWheelCooldown = false;
+                }, 800);
+            }
+        }, { passive: true });
+
+        // 4. Smooth Video Modal Handler
         const videoModal = document.getElementById('videoModal');
         const modalBox = document.getElementById('modalBox');
         const videoIframe = document.getElementById('videoIframe');
@@ -827,7 +884,7 @@
             if (e.key === 'Escape' && !videoModal.classList.contains('pointer-events-none')) closeModal();
         });
 
-        // 4. Subtle Motion Blur Scroll Effect
+        // 5. Subtle Motion Blur Scroll Effect
         let lastScrollTop = window.pageYOffset;
         let scrollTimeout;
 
