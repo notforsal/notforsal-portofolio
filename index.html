@@ -237,7 +237,7 @@
             </div>
         </div>
 
-        <!-- STEP 2: VIDEO LIST VIEW (3-Column Grid) -->
+        <!-- STEP 2: VIDEO LIST VIEW -->
         <div id="videoListView" class="hidden opacity-0 transform translate-y-4 transition-all duration-500 ease-out">
             <div class="mb-8 border-b border-zinc-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
@@ -250,7 +250,7 @@
             </div>
             
             <!-- Showcase Videos Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+            <div id="showcaseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
                 
                 <!-- CREATIVE JOURNEY ITEMS -->
                 
@@ -457,7 +457,7 @@
 
                 <!-- SHORT MOVIE ITEMS -->
 
-                <!-- Short Movie Item 1 (Marandang Documentary) -->
+                <!-- Short Movie Item 1 -->
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/Bthllhycpss" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
@@ -577,27 +577,113 @@
                     </div>
                 </div>
 
-
-                <!-- OTHER CATEGORIES -->
-
-                <!-- Event Documentation Item -->
-                <div data-category="event-doc" data-video="" class="showcase-card group cursor-pointer">
+                <!-- Short Movie Item 7 -->
+                <div data-category="short-movie" data-video="https://www.youtube.com/embed/2YXvLNNzegE" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <div class="w-full h-full bg-zinc-800"></div>
+                        <img src="https://img.youtube.com/vi/2YXvLNNzegE/hqdefault.jpg" 
+                             alt="Lunas Nepi Ka Modar" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Live Event & Tour</h3>
-                        <p class="text-xs text-zinc-400 font-medium">Videographer & Editor</p>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Lunas Nepi Ka Modar</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
 
-                <!-- Wedding / Prewedding Item -->
+                <!-- Short Movie Item 8 -->
+                <div data-category="short-movie" data-video="https://www.youtube.com/embed/pbgtPNmpdbU" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/pbgtPNmpdbU/hqdefault.jpg" 
+                             alt="Take The Reins" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Take The Reins</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
+                    </div>
+                </div>
+
+
+                <!-- EVENT DOCUMENTATION ITEMS -->
+
+                <!-- Event Documentation Item 1 -->
+                <div data-category="event-doc" data-video="https://www.youtube.com/embed/94Pc8ojdujM" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/94Pc8ojdujM/hqdefault.jpg" 
+                             alt="BJB Bogor Tour Jogja" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">BJB Bogor Tour Jogja</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+                <!-- Event Documentation Item 2 -->
+                <div data-category="event-doc" data-video="https://www.youtube.com/embed/b8vxNDGTiNs" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/b8vxNDGTiNs/hqdefault.jpg" 
+                             alt="BJB Daan Mogot Tour Jogja" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">BJB Daan Mogot Tour Jogja</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+                <!-- Event Documentation Item 3 -->
+                <div data-category="event-doc" data-video="https://www.youtube.com/embed/gSCYfQlk3Gk" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/gSCYfQlk3Gk/hqdefault.jpg" 
+                             alt="BJB Karawang Tour Bogor" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">BJB Karawang Tour Bogor</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+
+                <!-- WEDDING / PREWEDDING ITEMS -->
+
+                <!-- Wedding Item 1 -->
                 <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
@@ -605,7 +691,6 @@
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <!-- Automatic Google Drive Thumbnail -->
                         <img src="https://lh3.googleusercontent.com/d/16hRn-XdYlDBfLGXBvJKHH1TOx_aMtjQt" 
                              alt="Pre-wedding Nida & Rizky" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -618,20 +703,146 @@
                     </div>
                 </div>
 
-                <!-- Social Content Item -->
-                <div data-category="social" data-video="" class="showcase-card group cursor-pointer">
-                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+
+                <!-- SOCIAL CONTENT ITEMS (VERTICAL 9:16 FORMAT) -->
+
+                <!-- Social Content Item 1 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/YPjvhVu4saU" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
                             <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <div class="w-full h-full bg-zinc-800"></div>
+                        <img src="https://img.youtube.com/vi/YPjvhVu4saU/hqdefault.jpg" 
+                             alt="Showreal Work In Minari" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
                     </div>
                     <div>
                         <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Vertical Campaigns</h3>
-                        <p class="text-xs text-zinc-400 font-medium">Videographer & Editor</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Showreal Work In Minari</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer - Editor</p>
+                    </div>
+                </div>
+
+                <!-- Social Content Item 2 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/7OjN_Yraar8" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/7OjN_Yraar8/hqdefault.jpg" 
+                             alt="Infinix Series (MOLE)" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Infinix Series (MOLE)</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+                <!-- Social Content Item 3 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/vUWNMYnP_es" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/vUWNMYnP_es/hqdefault.jpg" 
+                             alt="(MOLE) - Episode 1" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">(MOLE) - Episode 1</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+                <!-- Social Content Item 4 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/eyhmbhf06Ko" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/eyhmbhf06Ko/hqdefault.jpg" 
+                             alt="(MOLE) - Episode 2" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">(MOLE) - Episode 2</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+                <!-- Social Content Item 5 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/9Z59rvB6tGs" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/9Z59rvB6tGs/hqdefault.jpg" 
+                             alt="(MOLE) - Episode 3" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">(MOLE) - Episode 3</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+                <!-- Social Content Item 6 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/IVaYNooWRW0" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/IVaYNooWRW0/hqdefault.jpg" 
+                             alt="(MOLE) - Episode 4" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">(MOLE) - Episode 4</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+                <!-- Social Content Item 7 -->
+                <div data-category="social" data-video="https://www.youtube.com/embed/I9cRLk1ycsQ" class="showcase-card group cursor-pointer">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://img.youtube.com/vi/I9cRLk1ycsQ/hqdefault.jpg" 
+                             alt="(MOLE) - Episode 5" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Social Content</p>
+                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">(MOLE) - Episode 5</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
 
@@ -796,7 +1007,7 @@
             const deltaX = touchEndX - touchStartX;
             const deltaY = touchEndY - touchStartY;
 
-            // Pastikan pergerakan horizontal dominan (bukan scroll vertikal) dan jarak usapan cukup
+            // Pastikan pergerakan horizontal dominan dan jarak usapan cukup
             if (Math.abs(deltaX) > Math.abs(deltaY) * 1.5 && Math.abs(deltaX) > 65) {
                 goBackToCategories();
             }
