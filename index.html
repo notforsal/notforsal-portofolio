@@ -11,30 +11,24 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                        display: ['Anton', 'Impact', 'sans-serif'],
+                        sans: ['Avenir Next', 'Avenir', 'Plus Jakarta Sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
                     },
                     colors: {
-                        nike: {
-                            black: '#0a0a0a',
-                            darkgray: '#171717',
-                            lightgray: '#262626',
-                            textgray: '#a1a1aa'
-                        }
+                        accent: '#ccff00', // Thin Electric Lime Green Accent
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts: Inter & Anton -->
+    <!-- Google Fonts: Plus Jakarta Sans (Avenir Alternative) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Avenir Next', 'Avenir', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #0a0a0a;
             color: #ffffff;
             overflow-x: hidden;
@@ -61,7 +55,7 @@
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        /* Nike-style underline hover for links */
+        /* Subtle Underline hover with thin accent highlight */
         .nav-link {
             position: relative;
         }
@@ -70,10 +64,10 @@
             position: absolute;
             width: 100%;
             transform: scaleX(0);
-            height: 2px;
+            height: 1.5px;
             bottom: -4px;
             left: 0;
-            background-color: #ffffff;
+            background-color: #ccff00;
             transform-origin: bottom right;
             transition: transform 0.25s ease-out;
         }
@@ -99,20 +93,27 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Subtle Stabilo Glow */
+        .lime-glow {
+            box-shadow: 0 0 10px rgba(204, 255, 0, 0.4);
+        }
     </style>
 </head>
-<body class="bg-[#0a0a0a] text-white selection:bg-white selection:text-black">
+<body class="bg-[#0a0a0a] text-white selection:bg-[#ccff00] selection:text-black">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-zinc-800 py-4 transition-all duration-300">
+    <nav class="fixed top-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-zinc-800/80 py-4 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-display uppercase tracking-widest text-white">NOTFORSAL</a>
-            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-wider text-zinc-300">
+            <a href="#home" class="text-xl font-bold tracking-tight text-white flex items-center gap-2">
+                Notforsal <span class="w-1.5 h-1.5 rounded-full bg-[#ccff00] inline-block"></span>
+            </a>
+            <div class="hidden md:flex gap-8 text-sm font-medium tracking-wide text-zinc-300">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#work" class="nav-link">Work</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black hover:bg-zinc-200 transition-colors">
+            <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide bg-white text-black hover:bg-[#ccff00] transition-colors">
                 Let's Talk
             </a>
         </div>
@@ -121,14 +122,24 @@
     <!-- Hero Section -->
     <section id="home" class="relative min-h-screen flex items-center justify-center px-6 pt-24 pb-12 scroll-blur-effect">
         <div class="w-full max-w-7xl mx-auto flex flex-col items-center text-center">
-            <h1 class="text-[12vw] leading-[0.85] font-display uppercase tracking-tighter text-white mb-6 scroll-reveal">
-                AUDIOVISUAL<br>ENTHUSIAST
+            
+            <!-- Thin Lime Status Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-800/90 text-xs font-medium text-zinc-300 mb-8 scroll-reveal">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ccff00] opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-[#ccff00]"></span>
+                </span>
+                Available for worldwide projects
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white mb-6 scroll-reveal leading-[1.05]">
+                Audiovisual<br>Enthusiast
             </h1>
-            <p class="text-lg md:text-xl text-zinc-400 font-medium max-w-2xl mx-auto mb-10 scroll-reveal tracking-tighter">
+            <p class="text-lg md:text-xl text-zinc-400 font-normal max-w-2xl mx-auto mb-10 scroll-reveal tracking-normal leading-relaxed">
                 Based in Bandung. Crafting cinematic visuals and compelling stories for brands, series, and moments.
             </p>
             <div class="flex flex-wrap items-center justify-center gap-4 scroll-reveal">
-                <a href="#work" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-bold text-sm uppercase tracking-widest hover:bg-zinc-200 transition-colors">
+                <a href="#work" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black rounded-full font-semibold text-sm tracking-wide hover:bg-[#ccff00] transition-colors">
                     View Showcase
                 </a>
             </div>
@@ -138,22 +149,26 @@
     <!-- About Section -->
     <section id="about" class="py-24 px-6 md:px-12 lg:px-24 bg-[#121212] border-y border-zinc-800/80 scroll-blur-effect">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tighter text-white mb-16 border-b-4 border-white pb-4 inline-block scroll-reveal">THE STORYTELLER</h2>
+            <div class="flex items-center gap-3 mb-16 scroll-reveal">
+                <span class="w-2.5 h-[2px] bg-[#ccff00]"></span>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white border-b-2 border-white pb-3 inline-block">The Storyteller</h2>
+            </div>
             
             <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="relative w-full aspect-[4/5] bg-zinc-800 rounded-lg overflow-hidden group scroll-reveal">
+                <div class="relative w-full aspect-[4/5] bg-zinc-800 rounded-lg overflow-hidden group scroll-reveal border border-zinc-800">
                     <img src="profil.jpeg" alt="Faishal Hafizh - Notforsal" 
                          onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop'" 
                          class="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105">
                 </div>
-                <div class="space-y-8 text-base md:text-lg text-zinc-300 font-medium leading-relaxed">
-                    <p class="text-2xl md:text-3xl font-bold leading-tight text-white scroll-reveal">
-                        AN ISBI BANDUNG GRADUATE DEDICATED TO CAPTURING VISUAL NARRATIVES WITH PROFOUND AESTHETICS.
+                <div class="space-y-8 text-base md:text-lg text-zinc-300 font-normal leading-relaxed">
+                    <p class="text-2xl md:text-3xl font-semibold leading-tight text-white scroll-reveal">
+                        An ISBI Bandung graduate dedicated to capturing visual narratives with profound aesthetics.
                     </p>
                     <p class="text-zinc-400 scroll-reveal">
                         Experienced in producing various works ranging from commercial brand ads, vertical mini-series, series behind-the-scenes (BTS) production, to cinematic wedding documentation.
                     </p>
-                    <p class="text-sm font-bold uppercase tracking-widest text-white border-l-4 border-white pl-4 scroll-reveal">
+                    <!-- Thin Stabilo Green Border Accent -->
+                    <p class="text-sm font-semibold tracking-wide text-white border-l-2 border-[#ccff00] pl-4 scroll-reveal">
                         Based in Indonesia, available for nationwide and worldwide projects.
                     </p>
                 </div>
@@ -161,76 +176,76 @@
         </div>
     </section>
 
-    <!-- Showcase Section (Horizontal Row List Layout) -->
+    <!-- Showcase Section -->
     <section id="work" class="py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-blur-effect">
         
-        <!-- STEP 1: CATEGORY SELECTION VIEW (Full-Width Rows) -->
+        <!-- STEP 1: CATEGORY SELECTION VIEW -->
         <div id="categorySelectionView">
             <div class="mb-10 border-b border-zinc-800 pb-4 scroll-reveal">
-                <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tighter text-white mb-2">SHOWCASE</h2>
-                <p class="text-zinc-400 font-medium text-xs md:text-sm uppercase tracking-wider">Select a category to explore selected works</p>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">Showcase</h2>
+                <p class="text-zinc-400 font-medium text-xs md:text-sm tracking-wide">Select a category to explore selected works</p>
             </div>
 
             <!-- Stacked Horizontal Category Rows -->
-            <div class="border-t-2 border-white">
+            <div class="border-t border-zinc-800">
                 
                 <!-- Category 1 -->
-                <div data-target-category="creative-journey" class="category-card border-b border-zinc-800 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
+                <div data-target-category="creative-journey" class="category-card border-b border-zinc-800/80 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
                     <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-500 w-28">01 / CATEGORY</span>
-                        <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-white group-hover:underline">CREATIVE JOURNEY</h3>
+                        <span class="text-xs font-semibold tracking-widest text-[#ccff00] w-28">01 / CATEGORY</span>
+                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-[#ccff00] transition-colors">Creative Journey</h3>
                     </div>
                     <div class="flex items-center justify-between md:justify-end gap-8 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">JOURNEY PRODUCTION</span>
-                        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-zinc-200 transition-colors">→</div>
+                        <span class="text-xs font-medium tracking-wide text-zinc-400">Journey Production</span>
+                        <div class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-[#ccff00] transition-colors">→</div>
                     </div>
                 </div>
 
                 <!-- Category 2 -->
-                <div data-target-category="short-movie" class="category-card border-b border-zinc-800 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
+                <div data-target-category="short-movie" class="category-card border-b border-zinc-800/80 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
                     <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-500 w-28">02 / CATEGORY</span>
-                        <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-white group-hover:underline">SHORT MOVIE</h3>
+                        <span class="text-xs font-semibold tracking-widest text-[#ccff00] w-28">02 / CATEGORY</span>
+                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-[#ccff00] transition-colors">Short Movie</h3>
                     </div>
                     <div class="flex items-center justify-between md:justify-end gap-8 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">CINEMA NARRATIVE</span>
-                        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-zinc-200 transition-colors">→</div>
+                        <span class="text-xs font-medium tracking-wide text-zinc-400">Cinema Narrative</span>
+                        <div class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-[#ccff00] transition-colors">→</div>
                     </div>
                 </div>
 
                 <!-- Category 3 -->
-                <div data-target-category="event-doc" class="category-card border-b border-zinc-800 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
+                <div data-target-category="event-doc" class="category-card border-b border-zinc-800/80 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
                     <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-500 w-28">03 / CATEGORY</span>
-                        <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-white group-hover:underline">EVENT DOCUMENTATION</h3>
+                        <span class="text-xs font-semibold tracking-widest text-[#ccff00] w-28">03 / CATEGORY</span>
+                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-[#ccff00] transition-colors">Event Documentation</h3>
                     </div>
                     <div class="flex items-center justify-between md:justify-end gap-8 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">LIVE & GATHERING</span>
-                        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-zinc-200 transition-colors">→</div>
+                        <span class="text-xs font-medium tracking-wide text-zinc-400">Live & Gathering</span>
+                        <div class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-[#ccff00] transition-colors">→</div>
                     </div>
                 </div>
 
                 <!-- Category 4 -->
-                <div data-target-category="wedding" class="category-card border-b border-zinc-800 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
+                <div data-target-category="wedding" class="category-card border-b border-zinc-800/80 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
                     <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-500 w-28">04 / CATEGORY</span>
-                        <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-white group-hover:underline">WEDDING / PREWEDDING</h3>
+                        <span class="text-xs font-semibold tracking-widest text-[#ccff00] w-28">04 / CATEGORY</span>
+                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-[#ccff00] transition-colors">Wedding / Prewedding</h3>
                     </div>
                     <div class="flex items-center justify-between md:justify-end gap-8 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">CINEMATIC MOMENTS</span>
-                        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-zinc-200 transition-colors">→</div>
+                        <span class="text-xs font-medium tracking-wide text-zinc-400">Cinematic Moments</span>
+                        <div class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-[#ccff00] transition-colors">→</div>
                     </div>
                 </div>
 
                 <!-- Category 5 -->
-                <div data-target-category="social" class="category-card border-b border-zinc-800 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
+                <div data-target-category="social" class="category-card border-b border-zinc-800/80 py-6 md:py-8 px-4 md:px-8 flex flex-col md:flex-row md:items-center justify-between cursor-pointer group hover:bg-zinc-900/60 transition-colors gap-4 scroll-reveal">
                     <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-12">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-500 w-28">05 / CATEGORY</span>
-                        <h3 class="text-3xl md:text-5xl font-display uppercase tracking-tight text-white group-hover:underline">SOCIAL CONTENT</h3>
+                        <span class="text-xs font-semibold tracking-widest text-[#ccff00] w-28">05 / CATEGORY</span>
+                        <h3 class="text-2xl md:text-4xl font-semibold tracking-tight text-white group-hover:text-[#ccff00] transition-colors">Social Content</h3>
                     </div>
                     <div class="flex items-center justify-between md:justify-end gap-8 pt-2 md:pt-0 border-t md:border-t-0 border-zinc-800">
-                        <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">VERTICAL ADS & REELS</span>
-                        <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-zinc-200 transition-colors">→</div>
+                        <span class="text-xs font-medium tracking-wide text-zinc-400">Vertical Ads & Reels</span>
+                        <div class="w-9 h-9 rounded-full bg-white text-black flex items-center justify-center text-sm group-hover:bg-[#ccff00] transition-colors">→</div>
                     </div>
                 </div>
 
@@ -242,14 +257,14 @@
             <div class="mb-8 border-b border-zinc-800 pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
                     <!-- Top Back Button -->
-                    <button class="backToCategoriesBtn inline-flex items-center gap-2 mb-2 text-xs font-bold uppercase tracking-widest text-zinc-400 hover:text-white transition-colors">
+                    <button class="backToCategoriesBtn inline-flex items-center gap-2 mb-2 text-xs font-semibold tracking-wide text-zinc-400 hover:text-[#ccff00] transition-colors">
                         ← Back to Categories
                     </button>
-                    <h2 id="activeCategoryTitle" class="text-3xl md:text-5xl font-display uppercase tracking-tighter text-white">CATEGORY NAME</h2>
+                    <h2 id="activeCategoryTitle" class="text-3xl md:text-5xl font-bold tracking-tight text-white">Category Name</h2>
                 </div>
             </div>
             
-            <!-- Showcase Videos Grid (Dynamic Columns for Horizontal vs Vertical) -->
+            <!-- Showcase Videos Grid -->
             <div id="showcaseGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
                 
                 <!-- CREATIVE JOURNEY ITEMS -->
@@ -257,7 +272,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/DD6cg7EY31s" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -267,8 +282,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Nadin Amizah - Di Akhir Perang</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Nadin Amizah - Di Akhir Perang</h3>
                         <p class="text-xs text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -276,7 +291,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/hbD6gOTC3dg" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -286,8 +301,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">The Mutual Golf Manifesto</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">The Mutual Golf Manifesto</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -295,7 +310,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/PFClgQhl8Is" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -305,8 +320,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">FAIRWAY TALK EP. 1</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">FAIRWAY TALK EP. 1</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -314,7 +329,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/KDlrMNTwIpU" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -324,8 +339,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">GOLF TOUR JATINANGOR</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">GOLF TOUR JATINANGOR</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -333,7 +348,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/9Dv1vtf0p8o" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -343,8 +358,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Golfscape & Grub</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Golfscape & Grub</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -352,7 +367,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/Yoj_3HY5JWg" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -362,8 +377,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Mutual Major Volume 1</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Mutual Major Volume 1</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -371,7 +386,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/_wgkbbWszoA" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -381,8 +396,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Mutual Major Full Recap</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Mutual Major Full Recap</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -390,7 +405,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/BRZ_esEpA-c" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -400,8 +415,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Fill The Cup (CEO PAP AGRI)</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Fill The Cup (CEO PAP AGRI)</h3>
                         <p class="text-xs text-zinc-400 font-medium">Camera Department</p>
                     </div>
                 </div>
@@ -409,7 +424,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/C82pd6teRPQ" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -419,8 +434,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Fill the Cup (Chief Medical Officer)</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Fill the Cup (Chief Medical Officer)</h3>
                         <p class="text-xs text-zinc-400 font-medium">Camera Department</p>
                     </div>
                 </div>
@@ -428,7 +443,7 @@
                 <div data-category="creative-journey" data-video="https://www.youtube.com/embed/gGafKwdG-YE" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -438,8 +453,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Creative Journey</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Fill the Cup (CEO SKT)</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Creative Journey</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Fill the Cup (CEO SKT)</h3>
                         <p class="text-xs text-zinc-400 font-medium">Camera Department</p>
                     </div>
                 </div>
@@ -450,7 +465,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/Bthllhycpss" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -460,8 +475,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Marandang Documentary</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Marandang Documentary</h3>
                         <p class="text-xs text-zinc-400 font-medium">Director of Photography</p>
                     </div>
                 </div>
@@ -469,7 +484,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/CvFKundEwCU" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -479,8 +494,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Lewat Kata Ia Bersuara</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Lewat Kata Ia Bersuara</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -488,7 +503,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/NA4o7aww3vo" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -498,8 +513,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Malih Warni</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Malih Warni</h3>
                         <p class="text-xs text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -507,7 +522,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/H8uhmLXIKiE" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -517,8 +532,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Now You Know me</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Now You Know me</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -526,7 +541,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/AiT1DIyDoX0" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -536,8 +551,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">MDKYTU</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">MDKYTU</h3>
                         <p class="text-xs text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -545,7 +560,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/DvDley-abwE" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -555,8 +570,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Babiat Sitelpang</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Babiat Sitelpang</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -564,7 +579,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/2YXvLNNzegE" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -574,8 +589,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Lunas Nepi Ka Modar</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Lunas Nepi Ka Modar</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -583,7 +598,7 @@
                 <div data-category="short-movie" data-video="https://www.youtube.com/embed/pbgtPNmpdbU" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -593,8 +608,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Short Movie</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Take The Reins</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Short Movie</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Take The Reins</h3>
                         <p class="text-xs text-zinc-400 font-medium">Production Sound Mixer</p>
                     </div>
                 </div>
@@ -605,7 +620,7 @@
                 <div data-category="event-doc" data-video="https://www.youtube.com/embed/94Pc8ojdujM" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -615,8 +630,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">BJB Bogor Tour Jogja</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Event Documentation</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">BJB Bogor Tour Jogja</h3>
                         <p class="text-xs text-zinc-400 font-medium">Videographer</p>
                     </div>
                 </div>
@@ -624,7 +639,7 @@
                 <div data-category="event-doc" data-video="https://www.youtube.com/embed/b8vxNDGTiNs" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -634,8 +649,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">BJB Daan Mogot Tour Jogja</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Event Documentation</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">BJB Daan Mogot Tour Jogja</h3>
                         <p class="text-xs text-zinc-400 font-medium">Videographer</p>
                     </div>
                 </div>
@@ -643,7 +658,7 @@
                 <div data-category="event-doc" data-video="https://www.youtube.com/embed/gSCYfQlk3Gk" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -653,8 +668,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Event Documentation</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">BJB Karawang Tour Bogor</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Event Documentation</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">BJB Karawang Tour Bogor</h3>
                         <p class="text-xs text-zinc-400 font-medium">Videographer</p>
                     </div>
                 </div>
@@ -665,7 +680,7 @@
                 <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-900 mb-4 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -675,8 +690,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-500 mb-1">Wedding / Prewedding</p>
-                        <h3 class="text-2xl font-display uppercase tracking-tight text-white mb-1">Nida & Rizky</h3>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#ccff00] mb-1">Wedding / Prewedding</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Nida & Rizky</h3>
                         <p class="text-xs text-zinc-400 font-medium">Videographer & Editor</p>
                     </div>
                 </div>
@@ -687,7 +702,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/YPjvhVu4saU" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -697,8 +712,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">Showreal Work In Minari</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Showreal Work In Minari</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Videographer - Editor</p>
                     </div>
                 </div>
@@ -706,7 +721,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/7OjN_Yraar8" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -716,8 +731,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">Infinix Series (MOLE)</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Infinix Series (MOLE)</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -725,7 +740,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/vUWNMYnP_es" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -735,8 +750,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 1</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 1</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -744,7 +759,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/eyhmbhf06Ko" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -754,8 +769,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 2</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 2</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -763,7 +778,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/9Z59rvB6tGs" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -773,8 +788,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 3</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 3</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -782,7 +797,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/IVaYNooWRW0" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -792,8 +807,8 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 4</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 4</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -801,7 +816,7 @@
                 <div data-category="social" data-video="https://www.youtube.com/embed/I9cRLk1ycsQ" class="showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-900 mb-3 rounded-lg border border-zinc-800">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform duration-300 shadow-xl">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#ccff00] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
@@ -811,17 +826,17 @@
                              loading="lazy">
                     </div>
                     <div>
-                        <p class="text-[9px] font-bold uppercase tracking-widest text-zinc-500 mb-0.5">Social Content</p>
-                        <h3 class="text-lg font-display uppercase tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 5</h3>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#ccff00] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">(MOLE) - Episode 5</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Bottom Back Button for Easy Mobile Navigation -->
+            <!-- Bottom Back Button -->
             <div class="mt-14 text-center border-t border-zinc-800/80 pt-8">
-                <button class="backToCategoriesBtn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 border border-zinc-800 hover:bg-zinc-800 text-xs font-bold uppercase tracking-widest text-zinc-300 hover:text-white transition-all shadow-lg active:scale-95">
+                <button class="backToCategoriesBtn inline-flex items-center gap-2 px-6 py-3 rounded-full bg-zinc-900 border border-zinc-800 hover:bg-[#ccff00] hover:text-black text-xs font-semibold tracking-wide text-zinc-300 transition-all shadow-lg active:scale-95">
                     ← Back to Categories
                 </button>
             </div>
@@ -831,23 +846,23 @@
     <!-- Contact Section -->
     <section id="contact" class="bg-[#121212] border-t border-zinc-800 text-white py-32 px-6 scroll-blur-effect">
         <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-6xl md:text-[8vw] leading-[0.9] font-display uppercase tracking-tighter mb-8 scroll-reveal">
-                LET'S CREATE<br>SOMETHING EPIC.
+            <h2 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 scroll-reveal leading-[1.1]">
+                Let's create<br>something <span class="text-[#ccff00]">epic.</span>
             </h2>
-            <p class="text-zinc-400 font-medium max-w-xl mx-auto mb-12 scroll-reveal">
+            <p class="text-zinc-400 font-normal max-w-xl mx-auto mb-12 scroll-reveal">
                 Available for freelance projects, collaborations, and full-time opportunities.
             </p>
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 scroll-reveal">
-                <a href="mailto:ask.faishal@gmail.com" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-full text-sm font-bold uppercase tracking-widest hover:bg-zinc-200 transition-colors">
+                <a href="mailto:ask.faishal@gmail.com" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-white text-black rounded-full text-sm font-semibold tracking-wide hover:bg-[#ccff00] transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
                     Email Me
                 </a>
-                <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                <a href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-transparent border border-zinc-700 hover:border-[#ccff00] text-white rounded-full text-sm font-semibold tracking-wide hover:bg-[#ccff00] hover:text-black transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                     WhatsApp
                 </a>
-                <a href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-white text-white rounded-full text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-colors">
+                <a href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 bg-transparent border border-zinc-700 hover:border-[#ccff00] text-white rounded-full text-sm font-semibold tracking-wide hover:bg-[#ccff00] hover:text-black transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                     Instagram
                 </a>
@@ -856,14 +871,14 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#0a0a0a] text-zinc-600 py-8 text-center text-xs font-bold uppercase tracking-widest border-t border-zinc-900">
-        <p>© 2026 NOTFORSAL. ALL RIGHTS RESERVED.</p>
+    <footer class="bg-[#0a0a0a] text-zinc-500 py-8 text-center text-xs font-normal tracking-wide border-t border-zinc-900">
+        <p>© 2026 Notforsal. All rights reserved.</p>
     </footer>
 
     <!-- Video Modal Container -->
     <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out">
         <div id="modalBox" class="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform scale-95 opacity-0 transition-all duration-500 ease-out">
-            <button id="closeVideoBtn" class="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">
+            <button id="closeVideoBtn" class="absolute top-4 right-4 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-[#ccff00] hover:text-black text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">
                 ✕
             </button>
             <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -901,11 +916,11 @@
         const workSection = document.getElementById('work');
 
         const categoryNames = {
-            'creative-journey': 'CREATIVE JOURNEY',
-            'short-movie': 'SHORT MOVIE',
-            'event-doc': 'EVENT DOCUMENTATION',
-            'wedding': 'WEDDING / PREWEDDING',
-            'social': 'SOCIAL CONTENT'
+            'creative-journey': 'Creative Journey',
+            'short-movie': 'Short Movie',
+            'event-doc': 'Event Documentation',
+            'wedding': 'Wedding / Prewedding',
+            'social': 'Social Content'
         };
 
         function switchViewSmooth(hideEl, showEl) {
@@ -938,9 +953,8 @@
         categoryCards.forEach(card => {
             card.addEventListener('click', () => {
                 const selectedCategory = card.getAttribute('data-target-category');
-                activeCategoryTitle.textContent = categoryNames[selectedCategory] || 'SHOWCASE';
+                activeCategoryTitle.textContent = categoryNames[selectedCategory] || 'Showcase';
 
-                // Ubah layout grid khusus Social Content agar kartu vertikal jauh lebih kecil dan tajam
                 if (selectedCategory === 'social') {
                     showcaseGrid.className = "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-x-4 gap-y-8";
                 } else {
