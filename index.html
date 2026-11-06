@@ -305,6 +305,10 @@
             text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 22px rgba(0,0,0,.8), 0 0 42px rgba(0,0,0,.6); filter:none !important; }
         #home .backdrop-blur-2xl { background:rgba(0,0,0,.55) !important; color:#fff !important; }
     </style>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#060705">
 </head>
 <body class="bg-black text-white selection:bg-[#b5ee2c] selection:text-black">
     <div id="glStage"><div id="glFallback"></div><canvas id="glCanvas"></canvas><div id="glScrim"></div></div>
@@ -343,7 +347,7 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#b5ee2c] opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-[#b5ee2c]"></span>
                 </span>
-                Available for worldwide projects
+                Available for projects
             </div>
 
             <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight text-white mb-6 scroll-reveal leading-[1.05] drop-shadow-2xl">
@@ -1047,6 +1051,40 @@
                 </div>
 
             
+            <div data-category="social" data-video="https://www.tiktok.com/@infinixid/video/7592870291353750805" data-tt="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <div class="tt-ph absolute inset-0 bg-gradient-to-br from-[#2c5a0c] via-[#0b1007] to-black flex items-end p-3"><span class="text-[9px] tracking-[.3em] text-white/50">TIKTOK</span></div>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">HOT 60 Pro - As Padel Beginer</h3>
+                        <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+            
+            <div data-category="social" data-video="https://www.tiktok.com/@infinixid/video/7590009802697280788" data-tt="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <div class="tt-ph absolute inset-0 bg-gradient-to-br from-[#2c5a0c] via-[#0b1007] to-black flex items-end p-3"><span class="text-[9px] tracking-[.3em] text-white/50">TIKTOK</span></div>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Jadiin Joy Celebration - Happy New Year</h3>
+                        <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+            
             </div>
 
             <!-- Bottom Back Button -->
@@ -1233,7 +1271,8 @@
                 const id = ytId(videoUrl);
                 if (videoUrl.includes('tiktok.com')) {
                     const m = videoUrl.match(/video\/(\d+)/);
-                    if (m) src = `https://www.tiktok.com/embed/v2/${m[1]}`;
+                    if (m) src = `https://www.tiktok.com/player/v1/${m[1]}?autoplay=1&controls=1&progress_bar=1&play_button=1&volume_control=1&fullscreen_button=0&rel=0&description=0&music_info=0`;
+                    external = videoUrl.split('?')[0];
                 } else if (videoUrl.includes('drive.google.com')) {
                     const m = videoUrl.match(/\/d\/([^\/]+)/);
                     if (m) { src = `https://drive.google.com/file/d/${m[1]}/preview`; external = `https://drive.google.com/file/d/${m[1]}/view`; }
@@ -1248,7 +1287,7 @@
                 const local = location.protocol === 'file:';
                 videoNote.classList.toggle('hidden', !(local && id));
                 videoExternal.href = external;
-                videoExternal.textContent = id ? 'Tidak muncul? Tonton di YouTube ↗' : 'Buka di tab baru ↗';
+                videoExternal.textContent = id ? 'Tidak muncul? Tonton di YouTube ↗' : (videoUrl.includes('tiktok.com') ? 'Tidak muncul? Tonton di TikTok ↗' : 'Buka di tab baru ↗');
                 videoLoader.style.display = '';
                 videoIframe.onload = () => { videoLoader.style.display = 'none'; };
                 videoIframe.src = src;
@@ -1442,5 +1481,22 @@
     })();
     </script>
 
+<script>
+    // TikTok thumbnails (loaded live from TikTok oEmbed; elegant placeholder if unavailable)
+    document.querySelectorAll('[data-tt]').forEach(async card => {
+        try {
+            const r = await fetch('https://www.tiktok.com/oembed?url=' + encodeURIComponent(card.dataset.video));
+            const j = await r.json();
+            if (!j.thumbnail_url) return;
+            const box = card.querySelector('.aspect-\\[9\\/16\\]');
+            const img = new Image();
+            img.referrerPolicy = 'no-referrer';
+            img.alt = card.querySelector('h3')?.textContent || '';
+            img.className = 'absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105';
+            img.onload = () => { card.querySelector('.tt-ph')?.remove(); box.appendChild(img); };
+            img.src = j.thumbnail_url;
+        } catch (e) {}
+    });
+    </script>
 </body>
 </html>
