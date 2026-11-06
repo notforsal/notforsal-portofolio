@@ -304,6 +304,7 @@
         #home p.text-lg, #home p.text-xl { color:#fff !important; font-weight:500 !important; opacity:.96;
             text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 22px rgba(0,0,0,.8), 0 0 42px rgba(0,0,0,.6); filter:none !important; }
         #home .backdrop-blur-2xl { background:rgba(0,0,0,.55) !important; color:#fff !important; }
+            #showcaseTitle, #activeCategoryTitle { font-weight:800 !important; letter-spacing:-.03em !important; }
     </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48">
@@ -399,7 +400,7 @@
         <!-- STEP 1: CATEGORY SELECTION VIEW -->
         <div id="categorySelectionView">
             <div class="mb-10 border-b border-zinc-900 pb-4 scroll-reveal">
-                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">Showcase</h2>
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2" id="showcaseTitle">Showcase</h2>
                 <p class="text-zinc-400 font-medium text-xs md:text-sm tracking-wide">Select a category to explore selected works</p>
             </div>
 
@@ -895,6 +896,50 @@
 
                 <!-- WEDDING / PREWEDDING ITEMS -->
 
+                <div data-category="event-doc" data-video="https://www.youtube.com/embed/POMiA_mbLNQ" class="interactive showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/POMiA_mbLNQ/maxresdefault.jpg" 
+                             alt="Danpac Outing Lembang" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Event Documentation</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Danpac Outing Lembang</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+
+                <!-- WEDDING / PREWEDDING ITEMS -->
+
+                <div data-category="event-doc" data-video="https://www.youtube.com/embed/CirkAhf05-c" class="interactive showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/CirkAhf05-c/maxresdefault.jpg" 
+                             alt="BJB Tanggerang Tour Jogja" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Event Documentation</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">BJB Tanggerang Tour Jogja</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+
+                <!-- WEDDING / PREWEDDING ITEMS -->
+
                 <div data-category="wedding" data-video="https://drive.google.com/file/d/1NUPfwkL60x1aLdd7_WS7wa8oZC00SOEA/preview" class="interactive showcase-card group cursor-pointer">
                     <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
@@ -911,6 +956,94 @@
                         <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Wedding / Prewedding</p>
                         <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Nida & Rizky</h3>
                         <p class="text-xs text-zinc-400 font-medium">Videographer & Editor</p>
+                    </div>
+                </div>
+
+
+                <!-- SOCIAL CONTENT ITEMS (COMPACT VERTICAL 9:16 CARDS) -->
+
+                <div data-category="wedding" data-video="https://www.youtube.com/embed/K5FNVR4U-mo" class="interactive showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/K5FNVR4U-mo/maxresdefault.jpg" 
+                             alt="Wedding of Rona &amp; Ihsan" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Wedding / Prewedding</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Wedding of Rona &amp; Ihsan</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+
+                <!-- SOCIAL CONTENT ITEMS (COMPACT VERTICAL 9:16 CARDS) -->
+
+                <div data-category="wedding" data-video="https://www.youtube.com/embed/zNs2EChO3To" class="interactive showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/zNs2EChO3To/maxresdefault.jpg" 
+                             alt="Wedding of Anto &amp; Marissa" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Wedding / Prewedding</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Wedding of Anto &amp; Marissa</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+
+                <!-- SOCIAL CONTENT ITEMS (COMPACT VERTICAL 9:16 CARDS) -->
+
+                <div data-category="wedding" data-video="https://www.youtube.com/embed/I8TQeYsbMXU" class="interactive showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/I8TQeYsbMXU/maxresdefault.jpg" 
+                             alt="Wedding of Mufti &amp; Diva" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Wedding / Prewedding</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Wedding of Mufti &amp; Diva</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Videographer</p>
+                    </div>
+                </div>
+
+
+                <!-- SOCIAL CONTENT ITEMS (COMPACT VERTICAL 9:16 CARDS) -->
+
+                <div data-category="wedding" data-video="https://www.youtube.com/embed/Jy-yaegyRik" class="interactive showcase-card group cursor-pointer">
+                    <div class="aspect-[16/10] w-full relative overflow-hidden bg-zinc-950 mb-4 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/Jy-yaegyRik/maxresdefault.jpg" 
+                             alt="Pre-Wedding of Tiara &amp; Firlana" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[11px] font-semibold tracking-wider text-[#b5ee2c] mb-1">Wedding / Prewedding</p>
+                        <h3 class="text-xl font-semibold tracking-tight text-white mb-1">Pre-Wedding of Tiara &amp; Firlana</h3>
+                        <p class="text-xs text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
 
@@ -1051,35 +1184,61 @@
                 </div>
 
             
-            <div data-category="social" data-video="https://www.tiktok.com/@infinixid/video/7592870291353750805" data-tt="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
+            <div data-category="social" data-video="https://www.youtube.com/embed/EPBrfz95FBk" data-yt-title="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
                             <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <div class="tt-ph absolute inset-0 bg-gradient-to-br from-[#2c5a0c] via-[#0b1007] to-black flex items-end p-3"><span class="text-[9px] tracking-[.3em] text-white/50">TIKTOK</span></div>
+                        <img src="https://i.ytimg.com/vi/EPBrfz95FBk/maxresdefault.jpg" 
+                             alt="Video Social Content" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
                     </div>
                     <div>
                         <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
-                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">HOT 60 Pro - As Padel Beginer</h3>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Video Social Content</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
 
             
-            <div data-category="social" data-video="https://www.tiktok.com/@infinixid/video/7590009802697280788" data-tt="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
+            <div data-category="social" data-video="https://www.youtube.com/embed/J3iqPbOIv7E" data-yt-title="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
                             <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
                                 <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
                             </div>
                         </div>
-                        <div class="tt-ph absolute inset-0 bg-gradient-to-br from-[#2c5a0c] via-[#0b1007] to-black flex items-end p-3"><span class="text-[9px] tracking-[.3em] text-white/50">TIKTOK</span></div>
+                        <img src="https://i.ytimg.com/vi/J3iqPbOIv7E/maxresdefault.jpg" 
+                             alt="Video Social Content" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
                     </div>
                     <div>
                         <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
-                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Jadiin Joy Celebration - Happy New Year</h3>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Video Social Content</h3>
+                        <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
+                    </div>
+                </div>
+
+            
+            <div data-category="social" data-video="https://www.youtube.com/embed/vbnebZ6WAvY" data-yt-title="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
+                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
+                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
+                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
+                                <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
+                            </div>
+                        </div>
+                        <img src="https://i.ytimg.com/vi/vbnebZ6WAvY/maxresdefault.jpg" 
+                             alt="Video Social Content" 
+                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Video Social Content</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -1129,17 +1288,38 @@
     </footer>
 
     <!-- Dynamic Responsive Video Modal Container -->
-    <div id="videoModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out">
-        <div id="modalBox" class="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform scale-95 opacity-0 transition-all duration-500 ease-out mx-auto">
-            <button id="closeVideoBtn" class="interactive absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/10 hover:bg-[#b5ee2c] hover:text-black text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">
-                ✕
-            </button>
-            <div id="videoLoader" class="absolute inset-0 flex items-center justify-center text-xs tracking-widest text-zinc-500 animate-pulse">MEMUAT VIDEO…</div>
-            <iframe id="videoIframe" class="w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-        <div id="videoFooter" class="absolute left-1/2 bottom-4 -translate-x-1/2 flex flex-col items-center gap-1 text-center px-4">
-            <a id="videoExternal" href="#" target="_blank" rel="noopener noreferrer" class="interactive inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-[#b5ee2c] hover:text-black border border-white/20 text-white text-[11px] font-semibold tracking-wide backdrop-blur-md transition-colors">Tidak muncul? Tonton di YouTube ↗</a>
-            <p id="videoNote" class="hidden text-[10px] text-zinc-400 max-w-xs">Halaman dibuka dari file lokal, sehingga YouTube sering memblokir pemutar tersemat. Upload ke hosting atau jalankan lewat localhost agar video tampil langsung di sini.</p>
+    <div id="videoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out overflow-y-auto overscroll-contain">
+        <button id="closeVideoBtn" class="interactive fixed top-4 right-4 z-[60] w-10 h-10 rounded-full bg-white/10 hover:bg-[#b5ee2c] hover:text-black text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">✕</button>
+        <div id="modalWrap" class="min-h-full w-full flex items-center justify-center px-4 pt-16 pb-10 md:px-8">
+            <div class="w-full max-w-6xl">
+                <div class="flex flex-col lg:flex-row gap-5 lg:gap-8 lg:items-stretch">
+                    <div id="modalBox" class="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
+                        <div id="videoLoader" class="absolute inset-0 flex items-center justify-center text-xs tracking-widest text-zinc-500 animate-pulse">MEMUAT VIDEO…</div>
+                        <iframe id="videoIframe" class="relative w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    <aside class="w-full lg:w-72 shrink-0 flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-5 md:p-6">
+                        <div>
+                            <p id="infoCat" class="text-[10px] font-semibold tracking-[.25em] uppercase text-[#b5ee2c] mb-3"></p>
+                            <h3 id="infoTitle" class="text-xl md:text-2xl font-semibold text-white leading-snug tracking-tight"></h3>
+                            <p id="infoRole" class="text-sm text-zinc-400 mt-1.5"></p>
+                        </div>
+                        <div class="mt-8">
+                            <p class="text-xs text-zinc-400 mb-3">Tertarik dengan karya seperti ini? Hubungi langsung:</p>
+                            <div class="flex flex-col gap-2">
+                                <a id="ctaWA" href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="interactive flex items-center justify-between w-full px-4 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white text-sm font-medium transition-colors"><span>WhatsApp</span><span>↗</span></a>
+                                <a id="ctaMail" href="mailto:ask.faishal@gmail.com" class="interactive flex items-center justify-between w-full px-4 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white text-sm font-medium transition-colors"><span>Email</span><span>↗</span></a>
+                                <a id="ctaIG" href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="interactive flex items-center justify-between w-full px-4 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white text-sm font-medium transition-colors"><span>Instagram</span><span>↗</span></a>
+                            </div>
+                            <a id="videoExternal" href="#" target="_blank" rel="noopener noreferrer" class="interactive inline-block mt-4 text-[11px] text-zinc-500 hover:text-[#b5ee2c] underline underline-offset-4 transition-colors">Tidak muncul? Tonton di YouTube ↗</a>
+                            <p id="videoNote" class="hidden mt-2 text-[10px] leading-relaxed text-zinc-500">Dibuka dari file lokal, sehingga YouTube sering memblokir pemutar tersemat. Upload ke hosting agar video tampil langsung di sini.</p>
+                        </div>
+                    </aside>
+                </div>
+                <div id="modalRelated" class="mt-8 hidden">
+                    <p class="text-[11px] font-semibold tracking-[.3em] uppercase text-zinc-400 mb-4">Video lainnya</p>
+                    <div id="relatedRow" class="flex gap-4 overflow-x-auto pb-3 snap-x"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1241,83 +1421,99 @@
         backToCategoriesBtns.forEach(btn => btn.addEventListener('click', goBackToCategories));
 
         // 3. Dynamic Orientation TikTok, YouTube & Drive Smart Embed Handler Modal
-        const videoModal = document.getElementById('videoModal');
-        const modalBox = document.getElementById('modalBox');
-        const videoIframe = document.getElementById('videoIframe');
-        const closeVideoBtn = document.getElementById('closeVideoBtn');
-
-        const videoLoader = document.getElementById('videoLoader');
-        const videoExternal = document.getElementById('videoExternal');
-        const videoNote = document.getElementById('videoNote');
-        const BOX = "relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform scale-95 opacity-0 transition-all duration-500 ease-out mx-auto ";
-        const VERT = BOX + "h-[min(76vh,640px)] aspect-[9/16] max-w-full";
-        const HORZ = BOX + "w-full max-w-5xl aspect-video";
+        const $ = id => document.getElementById(id);
+        const videoModal = $('videoModal'), modalBox = $('modalBox'), videoIframe = $('videoIframe'),
+              closeVideoBtn = $('closeVideoBtn'), videoLoader = $('videoLoader'), videoExternal = $('videoExternal'),
+              videoNote = $('videoNote'), infoCat = $('infoCat'), infoTitle = $('infoTitle'), infoRole = $('infoRole'),
+              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
+        const BOX = "relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform transition-all duration-500 ease-out ";
+        const VERT = BOX + "shrink-0 h-[min(68vh,600px)] aspect-[9/16] max-w-full self-center lg:self-auto";
+        const HORZ = BOX + "w-full lg:flex-1 min-w-0 aspect-video";
+        const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
         function ytId(url) {
             const m = url.match(/(?:embed\/|shorts\/|youtu\.be\/|[?&]v=)([A-Za-z0-9_-]{11})/);
             return m ? m[1] : null;
         }
+        const isVert = c => c.dataset.category === 'social' || (c.dataset.video || '').includes('shorts');
 
-        showcaseCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const videoUrl = card.getAttribute('data-video');
-                const category = card.getAttribute('data-category');
-                if (!videoUrl) return;
+        function openCard(card) {
+            const videoUrl = card.getAttribute('data-video');
+            if (!videoUrl) return;
+            const category = card.getAttribute('data-category');
+            const ps = card.querySelectorAll('p');
+            const title = (card.querySelector('h3')?.textContent || '').trim();
+            const role = (ps[1]?.textContent || '').trim();
+            const wasOpen = !videoModal.classList.contains('pointer-events-none');
 
-                const isVertical = category === 'social' || videoUrl.includes('tiktok.com') || videoUrl.includes('shorts');
-                modalBox.className = isVertical ? VERT : HORZ;
+            modalBox.className = (isVert(card) ? VERT : HORZ) + (wasOpen ? ' scale-100 opacity-100' : ' scale-95 opacity-0');
 
-                let src = videoUrl, external = videoUrl;
-                const id = ytId(videoUrl);
-                if (videoUrl.includes('tiktok.com')) {
-                    const m = videoUrl.match(/video\/(\d+)/);
-                    if (m) src = `https://www.tiktok.com/player/v1/${m[1]}?autoplay=1&controls=1&progress_bar=1&play_button=1&volume_control=1&fullscreen_button=0&rel=0&description=0&music_info=0`;
-                    external = videoUrl.split('?')[0];
-                } else if (videoUrl.includes('drive.google.com')) {
-                    const m = videoUrl.match(/\/d\/([^\/]+)/);
-                    if (m) { src = `https://drive.google.com/file/d/${m[1]}/preview`; external = `https://drive.google.com/file/d/${m[1]}/view`; }
-                } else if (videoUrl.includes('instagram.com')) {
-                    let c = videoUrl.split('?')[0]; if (!c.endsWith('/')) c += '/';
-                    src = c + 'embed/';
-                } else if (id) {
-                    src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1&modestbranding=1`;
-                    external = `https://www.youtube.com/watch?v=${id}`;
-                }
+            let src = videoUrl, external = videoUrl;
+            const id = ytId(videoUrl);
+            if (videoUrl.includes('drive.google.com')) {
+                const m = videoUrl.match(/\/d\/([^\/]+)/);
+                if (m) { src = `https://drive.google.com/file/d/${m[1]}/preview`; external = `https://drive.google.com/file/d/${m[1]}/view`; }
+            } else if (id) {
+                src = `https://www.youtube.com/embed/${id}?autoplay=1&rel=0&playsinline=1&modestbranding=1`;
+                external = `https://www.youtube.com/watch?v=${id}`;
+            }
 
-                const local = location.protocol === 'file:';
-                videoNote.classList.toggle('hidden', !(local && id));
-                videoExternal.href = external;
-                videoExternal.textContent = id ? 'Tidak muncul? Tonton di YouTube ↗' : (videoUrl.includes('tiktok.com') ? 'Tidak muncul? Tonton di TikTok ↗' : 'Buka di tab baru ↗');
-                videoLoader.style.display = '';
-                videoIframe.onload = () => { videoLoader.style.display = 'none'; };
-                videoIframe.src = src;
+            infoCat.textContent = (ps[0]?.textContent || '').trim();
+            infoTitle.textContent = title;
+            infoRole.textContent = role;
+            const msg = `Halo Faishal, saya tertarik dengan karya "${title}" di portofolio Anda.`;
+            ctaWA.href = 'https://wa.me/6287711475609?text=' + encodeURIComponent(msg);
+            ctaMail.href = 'mailto:ask.faishal@gmail.com?subject=' + encodeURIComponent('Project inquiry - ' + title) + '&body=' + encodeURIComponent(msg);
+            videoExternal.href = external;
+            videoExternal.textContent = id ? 'Tidak muncul? Tonton di YouTube ↗' : 'Buka di tab baru ↗';
+            videoNote.classList.toggle('hidden', !(location.protocol === 'file:' && id));
 
+            // other videos in the same category
+            const others = [...showcaseCards].filter(c => c !== card && c.dataset.category === category);
+            relatedWrap.classList.toggle('hidden', !others.length);
+            relatedRow.innerHTML = '';
+            others.forEach(c => {
+                const v = isVert(c), img = c.querySelector('img'), t = (c.querySelector('h3')?.textContent || '').trim();
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'interactive snap-start shrink-0 group text-left ' + (v ? 'w-24' : 'w-44');
+                b.innerHTML = `<div class="relative overflow-hidden rounded-lg border border-white/10 bg-zinc-950 ${v ? 'aspect-[9/16]' : 'aspect-video'}"><img src="${esc(img?.currentSrc || img?.src || '')}" alt="" class="w-full h-full object-cover opacity-75 group-hover:opacity-100 group-hover:scale-105 transition duration-500"><span class="absolute inset-0 flex items-center justify-center"><span class="w-7 h-7 rounded-full bg-white/90 text-black text-[10px] flex items-center justify-center group-hover:bg-[#b5ee2c] transition-colors">▶</span></span></div><p class="mt-2 text-[11px] leading-snug text-zinc-300 group-hover:text-white line-clamp-2">${esc(t)}</p>`;
+                b.addEventListener('click', () => { openCard(c); videoModal.scrollTo({ top: 0, behavior: 'smooth' }); });
+                relatedRow.appendChild(b);
+            });
+            relatedRow.scrollLeft = 0;
+
+            videoLoader.style.display = '';
+            videoIframe.onload = () => { videoLoader.style.display = 'none'; };
+            videoIframe.src = src;
+
+            if (!wasOpen) {
                 videoModal.classList.remove('opacity-0', 'pointer-events-none');
                 videoModal.classList.add('opacity-100', 'pointer-events-auto');
+                videoModal.scrollTop = 0;
                 setTimeout(() => {
                     modalBox.classList.remove('scale-95', 'opacity-0');
                     modalBox.classList.add('scale-100', 'opacity-100');
                 }, 20);
                 document.body.style.overflow = 'hidden';
-            });
-        });
+            }
+        }
+        showcaseCards.forEach(card => card.addEventListener('click', () => openCard(card)));
 
         function closeModal() {
             modalBox.classList.remove('scale-100', 'opacity-100');
             modalBox.classList.add('scale-95', 'opacity-0');
-
             videoModal.classList.remove('opacity-100', 'pointer-events-auto');
             videoModal.classList.add('opacity-0', 'pointer-events-none');
-
             setTimeout(() => {
+                if (!videoModal.classList.contains('pointer-events-none')) return;
                 videoIframe.onload = null;
                 videoIframe.src = '';
                 document.body.style.overflow = '';
             }, 400);
         }
-
         closeVideoBtn.addEventListener('click', closeModal);
-        videoModal.addEventListener('click', (e) => { if (e.target === videoModal) closeModal(); });
+        videoModal.addEventListener('click', (e) => { if (e.target === videoModal || e.target.id === 'modalWrap') closeModal(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !videoModal.classList.contains('pointer-events-none')) closeModal(); });
     </script>
 
@@ -1482,20 +1678,14 @@
     </script>
 
 <script>
-    // TikTok thumbnails (loaded live from TikTok oEmbed; elegant placeholder if unavailable)
-    document.querySelectorAll('[data-tt]').forEach(async card => {
-        try {
-            const r = await fetch('https://www.tiktok.com/oembed?url=' + encodeURIComponent(card.dataset.video));
-            const j = await r.json();
-            if (!j.thumbnail_url) return;
-            const box = card.querySelector('.aspect-\\[9\\/16\\]');
-            const img = new Image();
-            img.referrerPolicy = 'no-referrer';
-            img.alt = card.querySelector('h3')?.textContent || '';
-            img.className = 'absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105';
-            img.onload = () => { card.querySelector('.tt-ph')?.remove(); box.appendChild(img); };
-            img.src = j.thumbnail_url;
-        } catch (e) {}
+    // Social Content titles are synced from YouTube (oEmbed) so they always match the original video title
+    document.querySelectorAll('[data-yt-title]').forEach(card => {
+        const m = (card.dataset.video || '').match(/embed\/([\w-]{11})/);
+        if (!m) return;
+        fetch('https://www.youtube.com/oembed?format=json&url=' + encodeURIComponent('https://www.youtube.com/watch?v=' + m[1]))
+            .then(r => r.json())
+            .then(j => { if (j.title) { card.querySelector('h3').textContent = j.title; const im = card.querySelector('img'); if (im) im.alt = j.title; } })
+            .catch(() => {});
     });
     </script>
 </body>
