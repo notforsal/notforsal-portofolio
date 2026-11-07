@@ -1063,7 +1063,7 @@
 
                 <!-- SOCIAL CONTENT ITEMS (COMPACT VERTICAL 9:16 CARDS) -->
 
-                <div data-category="social" data-video="https://www.youtube.com/embed/YPjvhVu4saU" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
+                <div data-category="social" data-video="https://www.youtube.com/embed/YPjvhVu4saU" data-output="@infinixid|@pamjaya|@thesoundsproject|etc." class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
                     <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
                         <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
                             <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
@@ -1897,7 +1897,7 @@
                             <p id="infoRole" class="text-[13px] text-zinc-400 mt-1.5"></p>
                             <div id="infoMeta" class="hidden mt-6 pt-5 border-t border-white/10 space-y-4">
                                 <div><p class="text-[10px] font-semibold tracking-[.18em] uppercase text-zinc-500 mb-1">Production House:</p><p class="text-sm text-zinc-200">Minari Commo Cult</p></div>
-                                <div><p class="text-[10px] font-semibold tracking-[.18em] uppercase text-zinc-500 mb-1">Output:</p><p class="text-sm text-zinc-200">Tiktok @infinixid</p></div>
+                                <div><p class="text-[10px] font-semibold tracking-[.18em] uppercase text-zinc-500 mb-1">Output:</p><p id="infoOutput" class="text-sm text-zinc-200 whitespace-pre-line">Tiktok @infinixid</p></div>
                             </div>
                         </div>
                         <div class="mt-6">
@@ -2030,7 +2030,7 @@
         const videoModal = $('videoModal'), modalBox = $('modalBox'), 
               closeVideoBtn = $('closeVideoBtn'), videoLoader = $('videoLoader'), videoExternal = $('videoExternal'),
               videoNote = $('videoNote'), infoCat = $('infoCat'), infoTitle = $('infoTitle'), infoRole = $('infoRole'),
-              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), modalSpacer = $('modalSpacer'), infoMeta = $('infoMeta'), relPrev = $('relPrev'), relNext = $('relNext'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
+              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), modalSpacer = $('modalSpacer'), infoOutput = $('infoOutput'), infoMeta = $('infoMeta'), relPrev = $('relPrev'), relNext = $('relNext'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
         const BOX = "relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform transition-all duration-500 ease-out ";
         const VERT = BOX + "self-center lg:self-auto mx-auto lg:mx-0 max-w-full";
         const HORZ = BOX + "self-center lg:self-auto mx-auto lg:mx-0 max-w-full";
@@ -2109,6 +2109,7 @@
             infoTitle.textContent = title;
             infoRole.textContent = role;
             infoMeta.classList.toggle('hidden', category !== 'social');
+            infoOutput.textContent = (card.dataset.output || 'Tiktok @infinixid').split('|').join('\n');
             const msg = `Halo Faishal, saya tertarik dengan karya "${title}" di portofolio Anda.`;
             ctaWA.href = 'https://wa.me/6287711475609?text=' + encodeURIComponent(msg);
             ctaMail.href = 'mailto:ask.faishal@gmail.com?subject=' + encodeURIComponent('Project inquiry - ' + title) + '&body=' + encodeURIComponent(msg);
