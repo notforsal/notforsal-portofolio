@@ -304,7 +304,16 @@
         #home p.text-lg, #home p.text-xl { color:#fff !important; font-weight:500 !important; opacity:.96;
             text-shadow:0 1px 2px rgba(0,0,0,.9), 0 0 22px rgba(0,0,0,.8), 0 0 42px rgba(0,0,0,.6); filter:none !important; }
         #home .backdrop-blur-2xl { background:rgba(0,0,0,.55) !important; color:#fff !important; }
-            #showcaseTitle, #activeCategoryTitle { font-weight:800 !important; letter-spacing:-.03em !important; }
+            #showcaseTitle, #activeCategoryTitle { font-weight:600 !important; letter-spacing:-.03em !important; }
+
+        html, body { overscroll-behavior-x: none; }
+        .no-scrollbar { scrollbar-width:none; -ms-overflow-style:none; }
+        .no-scrollbar::-webkit-scrollbar { display:none; }
+        .rel-arrow { position:absolute; z-index:5; width:40px; height:40px; border-radius:999px; display:flex; align-items:center; justify-content:center;
+            background:rgba(10,12,8,.72); border:1px solid rgba(255,255,255,.22); color:#fff; backdrop-filter:blur(10px);
+            transform:translateY(-50%); transition:opacity .3s ease, background-color .3s, color .3s; }
+        .rel-arrow:hover { background:#b5ee2c; color:#000; }
+        .rel-arrow.is-off { opacity:0; pointer-events:none; }
     </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48">
@@ -1192,13 +1201,13 @@
                             </div>
                         </div>
                         <img src="https://i.ytimg.com/vi/EPBrfz95FBk/maxresdefault.jpg" 
-                             alt="Video Social Content" 
+                             alt="HOT 60 Pro - As Padel Beginner" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
                     </div>
                     <div>
                         <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
-                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Video Social Content</h3>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">HOT 60 Pro - As Padel Beginner</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -1212,33 +1221,13 @@
                             </div>
                         </div>
                         <img src="https://i.ytimg.com/vi/J3iqPbOIv7E/maxresdefault.jpg" 
-                             alt="Video Social Content" 
+                             alt="Joy Celebration - New Year Goals" 
                              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                              loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
                     </div>
                     <div>
                         <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
-                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Video Social Content</h3>
-                        <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
-                    </div>
-                </div>
-
-            
-            <div data-category="social" data-video="https://www.youtube.com/embed/vbnebZ6WAvY" data-yt-title="1" class="interactive showcase-card group cursor-pointer max-w-[200px] mx-auto w-full">
-                    <div class="aspect-[9/16] w-full relative overflow-hidden bg-zinc-950 mb-3 rounded-lg border border-zinc-900">
-                        <div class="video-overlay absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors z-10 flex items-center justify-center">
-                            <div class="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center transform scale-90 group-hover:scale-100 group-hover:bg-[#b5ee2c] transition-all duration-300 shadow-xl">
-                                <i data-lucide="play" class="w-4 h-4 fill-current ml-0.5"></i>
-                            </div>
-                        </div>
-                        <img src="https://i.ytimg.com/vi/vbnebZ6WAvY/maxresdefault.jpg" 
-                             alt="Video Social Content" 
-                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                             loading="lazy" onerror="this.onerror=null;this.src=this.src.replace('maxresdefault','hqdefault')">
-                    </div>
-                    <div>
-                        <p class="text-[10px] font-semibold tracking-wider text-[#b5ee2c] mb-0.5">Social Content</p>
-                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Video Social Content</h3>
+                        <h3 class="text-base font-semibold tracking-tight text-white mb-0.5 leading-tight">Joy Celebration - New Year Goals</h3>
                         <p class="text-[11px] text-zinc-400 font-medium">Post Production</p>
                     </div>
                 </div>
@@ -1290,25 +1279,24 @@
     <!-- Dynamic Responsive Video Modal Container -->
     <div id="videoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out overflow-y-auto overscroll-contain">
         <button id="closeVideoBtn" class="interactive fixed top-4 right-4 z-[60] w-10 h-10 rounded-full bg-white/10 hover:bg-[#b5ee2c] hover:text-black text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">✕</button>
-        <div id="modalWrap" class="min-h-full w-full flex items-center justify-center px-4 pt-16 pb-10 md:px-8">
-            <div class="w-full max-w-6xl">
-                <div class="flex flex-col lg:flex-row gap-5 lg:gap-8 lg:items-stretch">
+        <div id="modalWrap" class="min-h-full w-full flex items-center justify-center px-3 pt-16 pb-10 md:px-6">
+            <div class="w-full max-w-[1500px]">
+                <div class="flex flex-col lg:flex-row gap-4 lg:gap-5 lg:items-stretch">
                     <div id="modalBox" class="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
                         <div id="videoLoader" class="absolute inset-0 flex items-center justify-center text-xs tracking-widest text-zinc-500 animate-pulse">MEMUAT VIDEO…</div>
                         <iframe id="videoIframe" class="relative w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
-                    <aside class="w-full lg:w-72 shrink-0 flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-5 md:p-6">
+                    <aside class="w-full lg:w-56 shrink-0 flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-5">
                         <div>
-                            <p id="infoCat" class="text-[10px] font-semibold tracking-[.25em] uppercase text-[#b5ee2c] mb-3"></p>
-                            <h3 id="infoTitle" class="text-xl md:text-2xl font-semibold text-white leading-snug tracking-tight"></h3>
-                            <p id="infoRole" class="text-sm text-zinc-400 mt-1.5"></p>
+                            <p id="infoCat" class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#b5ee2c] mb-3"></p>
+                            <h3 id="infoTitle" class="text-lg md:text-xl font-semibold text-white leading-snug tracking-tight"></h3>
+                            <p id="infoRole" class="text-[13px] text-zinc-400 mt-1.5"></p>
                         </div>
-                        <div class="mt-8">
-                            <p class="text-xs text-zinc-400 mb-3">Tertarik dengan karya seperti ini? Hubungi langsung:</p>
-                            <div class="flex flex-col gap-2">
-                                <a id="ctaWA" href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" class="interactive flex items-center justify-between w-full px-4 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white text-sm font-medium transition-colors"><span>WhatsApp</span><span>↗</span></a>
-                                <a id="ctaMail" href="mailto:ask.faishal@gmail.com" class="interactive flex items-center justify-between w-full px-4 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white text-sm font-medium transition-colors"><span>Email</span><span>↗</span></a>
-                                <a id="ctaIG" href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" class="interactive flex items-center justify-between w-full px-4 py-3 rounded-xl border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white text-sm font-medium transition-colors"><span>Instagram</span><span>↗</span></a>
+                        <div class="mt-6">
+                            <div class="flex items-center gap-2.5">
+                                <a id="ctaWA" href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                                <a id="ctaMail" href="mailto:ask.faishal@gmail.com" aria-label="Email" title="Email" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg></a>
+                                <a id="ctaIG" href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r=".7" fill="currentColor" stroke="none"/></svg></a>
                             </div>
                             <a id="videoExternal" href="#" target="_blank" rel="noopener noreferrer" class="interactive inline-block mt-4 text-[11px] text-zinc-500 hover:text-[#b5ee2c] underline underline-offset-4 transition-colors">Tidak muncul? Tonton di YouTube ↗</a>
                             <p id="videoNote" class="hidden mt-2 text-[10px] leading-relaxed text-zinc-500">Dibuka dari file lokal, sehingga YouTube sering memblokir pemutar tersemat. Upload ke hosting agar video tampil langsung di sini.</p>
@@ -1317,7 +1305,11 @@
                 </div>
                 <div id="modalRelated" class="mt-8 hidden">
                     <p class="text-[11px] font-semibold tracking-[.3em] uppercase text-zinc-400 mb-4">Video lainnya</p>
-                    <div id="relatedRow" class="flex gap-4 overflow-x-auto pb-3 snap-x"></div>
+                    <div class="relative">
+                        <button id="relPrev" type="button" aria-label="Sebelumnya" class="interactive rel-arrow is-off left-2"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+                        <button id="relNext" type="button" aria-label="Berikutnya" class="interactive rel-arrow is-off right-2"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+                        <div id="relatedRow" class="flex gap-4 overflow-x-auto pb-3 snap-x no-scrollbar"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1415,19 +1407,22 @@
                 });
 
                 switchViewSmooth(categorySelectionView, videoListView);
+                try { history.pushState({ app: 1, view: 'list', cat: selectedCategory }, ''); } catch (e) {}
             });
         });
 
-        backToCategoriesBtns.forEach(btn => btn.addEventListener('click', goBackToCategories));
+        backToCategoriesBtns.forEach(btn => btn.addEventListener('click', () => {
+            if (history.state && history.state.view === 'list') history.back(); else goBackToCategories();
+        }));
 
         // 3. Dynamic Orientation TikTok, YouTube & Drive Smart Embed Handler Modal
         const $ = id => document.getElementById(id);
         const videoModal = $('videoModal'), modalBox = $('modalBox'), videoIframe = $('videoIframe'),
               closeVideoBtn = $('closeVideoBtn'), videoLoader = $('videoLoader'), videoExternal = $('videoExternal'),
               videoNote = $('videoNote'), infoCat = $('infoCat'), infoTitle = $('infoTitle'), infoRole = $('infoRole'),
-              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
+              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), relPrev = $('relPrev'), relNext = $('relNext'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
         const BOX = "relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform transition-all duration-500 ease-out ";
-        const VERT = BOX + "shrink-0 h-[min(68vh,600px)] aspect-[9/16] max-w-full self-center lg:self-auto";
+        const VERT = BOX + "shrink-0 h-[min(72vh,660px)] aspect-[9/16] max-w-full self-center lg:self-auto";
         const HORZ = BOX + "w-full lg:flex-1 min-w-0 aspect-video";
         const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
@@ -1436,6 +1431,18 @@
             return m ? m[1] : null;
         }
         const isVert = c => c.dataset.category === 'social' || (c.dataset.video || '').includes('shorts');
+
+        function updateArrows() {
+            const max = relatedRow.scrollWidth - relatedRow.clientWidth;
+            relPrev.classList.toggle('is-off', relatedRow.scrollLeft <= 2);
+            relNext.classList.toggle('is-off', relatedRow.scrollLeft >= max - 2);
+            const th = relatedRow.querySelector('div')?.offsetHeight || 80;
+            relPrev.style.top = relNext.style.top = (th / 2) + 'px';
+        }
+        relatedRow.addEventListener('scroll', updateArrows, { passive: true });
+        addEventListener('resize', updateArrows);
+        relPrev.addEventListener('click', () => relatedRow.scrollBy({ left: -relatedRow.clientWidth * .8, behavior: 'smooth' }));
+        relNext.addEventListener('click', () => relatedRow.scrollBy({ left: relatedRow.clientWidth * .8, behavior: 'smooth' }));
 
         function openCard(card) {
             const videoUrl = card.getAttribute('data-video');
@@ -1482,11 +1489,13 @@
                 relatedRow.appendChild(b);
             });
             relatedRow.scrollLeft = 0;
+            requestAnimationFrame(updateArrows);
 
             videoLoader.style.display = '';
             videoIframe.onload = () => { videoLoader.style.display = 'none'; };
             videoIframe.src = src;
 
+            try { history[wasOpen ? 'replaceState' : 'pushState']({ app: 1, view: 'modal', cat: category }, ''); } catch (e) {}
             if (!wasOpen) {
                 videoModal.classList.remove('opacity-0', 'pointer-events-none');
                 videoModal.classList.add('opacity-100', 'pointer-events-auto');
@@ -1500,7 +1509,7 @@
         }
         showcaseCards.forEach(card => card.addEventListener('click', () => openCard(card)));
 
-        function closeModal() {
+        function hideModal() {
             modalBox.classList.remove('scale-100', 'opacity-100');
             modalBox.classList.add('scale-95', 'opacity-0');
             videoModal.classList.remove('opacity-100', 'pointer-events-auto');
@@ -1512,9 +1521,41 @@
                 document.body.style.overflow = '';
             }, 400);
         }
-        closeVideoBtn.addEventListener('click', closeModal);
-        videoModal.addEventListener('click', (e) => { if (e.target === videoModal || e.target.id === 'modalWrap') closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !videoModal.classList.contains('pointer-events-none')) closeModal(); });
+        const modalOpen = () => !videoModal.classList.contains('pointer-events-none');
+        function requestClose() {
+            if (history.state && history.state.view === 'modal') history.back(); else hideModal();
+        }
+        closeVideoBtn.addEventListener('click', requestClose);
+        videoModal.addEventListener('click', (e) => { if (e.target === videoModal || e.target.id === 'modalWrap') requestClose(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOpen()) requestClose(); });
+
+        // ===== Back navigation: browser/iPhone edge-swipe/Android back use history; trackpad swipe handled below =====
+        addEventListener('popstate', (e) => {
+            const v = e.state && e.state.view;
+            if (modalOpen() && v !== 'modal') hideModal();
+            if (v !== 'list' && v !== 'modal' && !videoListView.classList.contains('hidden')) goBackToCategories();
+        });
+        function appBack() {
+            if (modalOpen()) requestClose();
+            else if (!videoListView.classList.contains('hidden')) {
+                if (history.state && history.state.view === 'list') history.back(); else goBackToCategories();
+            }
+        }
+        // two-finger horizontal swipe on trackpad (Chromium): deliberate, mostly-horizontal, long swipe only
+        if (/Chrome\//.test(navigator.userAgent)) {
+            let acc = 0, lastT = 0, cool = 0;
+            addEventListener('wheel', (e) => {
+                if (!modalOpen() && videoListView.classList.contains('hidden')) return;
+                if (e.target.closest && e.target.closest('#relatedRow')) return;
+                const now = performance.now();
+                if (now - lastT > 220) acc = 0;
+                lastT = now;
+                if (Math.abs(e.deltaX) < Math.abs(e.deltaY) * 2.5) { acc = 0; return; }
+                acc += e.deltaX;
+                if (now < cool) return;
+                if (acc < -260) { cool = now + 1000; acc = 0; appBack(); }
+            }, { passive: true });
+        }
     </script>
 
     <script>
