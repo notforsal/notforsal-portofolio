@@ -291,6 +291,8 @@
         #cursorRing.show { opacity:1; }
         #cursorRing.big { width:72px; height:72px; margin:-36px 0 0 -36px; border-color:rgba(181,238,44,.6); }
         @media (hover:none) { #cursorRing { display:none; } }
+        /* the video player (cross-origin iframe) swallows mouse events, so hide the custom cursor there and let the native one show */
+        body.cursor-in-video #customCursor, body.cursor-in-video #cursorRing { opacity:0 !important; }
         @media (prefers-reduced-motion: reduce) { .line-in { animation-duration:.01s; } }
 
         /* ===== Hero readability ===== */
@@ -2160,6 +2162,7 @@
         showcaseCards.forEach(card => card.addEventListener('click', () => openCard(card)));
 
         function hideModal() {
+            document.body.classList.remove('cursor-in-video');
             modalBox.classList.remove('scale-100', 'opacity-100');
             modalBox.classList.add('scale-95', 'opacity-0');
             videoModal.classList.remove('opacity-100', 'pointer-events-auto');
@@ -2175,6 +2178,8 @@
             hideModal();
             if (history.state && history.state.view === 'modal') { try { history.back(); } catch (e) {} }
         }
+        modalBox.addEventListener('mouseenter', () => document.body.classList.add('cursor-in-video'));
+        modalBox.addEventListener('mouseleave', () => document.body.classList.remove('cursor-in-video'));
         closeVideoBtn.addEventListener('click', requestClose);
         videoModal.addEventListener('click', (e) => { if (e.target === videoModal || e.target.id === 'modalWrap') requestClose(); });
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modalOpen()) requestClose(); });
