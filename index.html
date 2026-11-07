@@ -1284,26 +1284,28 @@
     <div id="videoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl opacity-0 pointer-events-none transition-all duration-500 ease-out overflow-y-auto overscroll-contain">
         <button id="closeVideoBtn" class="interactive fixed top-4 right-4 z-[60] w-10 h-10 rounded-full bg-white/10 hover:bg-[#b5ee2c] hover:text-black text-white flex items-center justify-center transition-all duration-300 border border-white/20 backdrop-blur-md">✕</button>
         <div id="modalWrap" class="min-h-full w-full flex items-start justify-center px-3 pt-16 pb-12 md:px-6">
-            <div class="w-full max-w-[1240px] mx-auto flex flex-col items-center">
-                <div id="modalBox" class="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
-                    <div id="videoLoader" class="absolute inset-0 flex items-center justify-center text-xs tracking-widest text-zinc-500 animate-pulse">MEMUAT VIDEO…</div>
-                    <iframe id="videoIframe" class="relative w-full h-full" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <div id="infoBar" class="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-5 py-4">
-                    <div class="min-w-0">
-                        <p id="infoCat" class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#b5ee2c] mb-1.5"></p>
-                        <h3 id="infoTitle" class="text-lg md:text-xl font-semibold text-white leading-snug tracking-tight"></h3>
-                        <p id="infoRole" class="text-[13px] text-zinc-400 mt-1"></p>
+            <div class="w-full max-w-[1500px] mx-auto">
+                <div class="flex flex-col lg:flex-row lg:justify-center gap-4 lg:gap-5 lg:items-stretch">
+                    <div id="modalSpacer" class="hidden lg:block w-56 shrink-0" aria-hidden="true"></div>
+                    <div id="modalBox" class="relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800">
+                        <div id="videoLoader" class="absolute inset-0 flex items-center justify-center text-xs tracking-widest text-zinc-500 animate-pulse">MEMUAT VIDEO…</div>
                     </div>
-                    <div class="flex items-center gap-2.5 shrink-0">
-                        <a id="ctaWA" href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                        <a id="ctaMail" href="mailto:ask.faishal@gmail.com" aria-label="Email" title="Email" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg></a>
-                        <a id="ctaIG" href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r=".7" fill="currentColor" stroke="none"/></svg></a>
-                    </div>
-                </div>
-                <div class="mt-3 text-center">
-                    <a id="videoExternal" href="#" target="_blank" rel="noopener noreferrer" class="interactive inline-block text-[11px] text-zinc-500 hover:text-[#b5ee2c] underline underline-offset-4 transition-colors">Tidak muncul? Tonton di YouTube ↗</a>
-                    <p id="videoNote" class="hidden mt-2 text-[10px] leading-relaxed text-zinc-500 max-w-sm mx-auto">Dibuka dari file lokal, sehingga YouTube sering memblokir pemutar tersemat. Upload ke hosting agar video tampil langsung di sini.</p>
+                    <aside class="w-full lg:w-56 shrink-0 flex flex-col justify-between rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-md p-5">
+                        <div>
+                            <p id="infoCat" class="text-[10px] font-semibold tracking-[.22em] uppercase text-[#b5ee2c] mb-3"></p>
+                            <h3 id="infoTitle" class="text-lg md:text-xl font-semibold text-white leading-snug tracking-tight"></h3>
+                            <p id="infoRole" class="text-[13px] text-zinc-400 mt-1.5"></p>
+                        </div>
+                        <div class="mt-6">
+                            <div class="flex items-center gap-2.5">
+                                <a id="ctaWA" href="https://wa.me/6287711475609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                                <a id="ctaMail" href="mailto:ask.faishal@gmail.com" aria-label="Email" title="Email" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 7.5 8.5 6 8.5-6"/></svg></a>
+                                <a id="ctaIG" href="https://instagram.com/faishalhafizhh" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="interactive w-11 h-11 rounded-full border border-white/15 bg-white/5 hover:bg-[#b5ee2c] hover:text-black hover:border-[#b5ee2c] text-white flex items-center justify-center transition-colors"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r=".7" fill="currentColor" stroke="none"/></svg></a>
+                            </div>
+                            <a id="videoExternal" href="#" target="_blank" rel="noopener noreferrer" class="interactive inline-block mt-4 text-[11px] text-zinc-500 hover:text-[#b5ee2c] underline underline-offset-4 transition-colors">Tidak muncul? Tonton di YouTube ↗</a>
+                            <p id="videoNote" class="hidden mt-2 text-[10px] leading-relaxed text-zinc-500">Dibuka dari file lokal, sehingga YouTube sering memblokir pemutar tersemat. Upload ke hosting agar video tampil langsung di sini.</p>
+                        </div>
+                    </aside>
                 </div>
                 <div id="modalRelated" class="mt-9 w-fit max-w-full mx-auto hidden">
                     <p class="text-[11px] font-semibold tracking-[.3em] uppercase text-zinc-400 mb-4">Video lainnya</p>
@@ -1415,18 +1417,19 @@
         });
 
         backToCategoriesBtns.forEach(btn => btn.addEventListener('click', () => {
-            if (history.state && history.state.view === 'list') history.back(); else goBackToCategories();
+            goBackToCategories();
+            if (history.state && history.state.view === 'list') { try { history.back(); } catch (e) {} }
         }));
 
         // 3. Dynamic Orientation TikTok, YouTube & Drive Smart Embed Handler Modal
         const $ = id => document.getElementById(id);
-        const videoModal = $('videoModal'), modalBox = $('modalBox'), videoIframe = $('videoIframe'),
+        const videoModal = $('videoModal'), modalBox = $('modalBox'), 
               closeVideoBtn = $('closeVideoBtn'), videoLoader = $('videoLoader'), videoExternal = $('videoExternal'),
               videoNote = $('videoNote'), infoCat = $('infoCat'), infoTitle = $('infoTitle'), infoRole = $('infoRole'),
-              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), infoBar = $('infoBar'), relPrev = $('relPrev'), relNext = $('relNext'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
+              relatedWrap = $('modalRelated'), relatedRow = $('relatedRow'), modalSpacer = $('modalSpacer'), relPrev = $('relPrev'), relNext = $('relNext'), ctaWA = $('ctaWA'), ctaMail = $('ctaMail');
         const BOX = "relative bg-black rounded-2xl overflow-hidden shadow-2xl border border-zinc-800 transform transition-all duration-500 ease-out ";
-        const VERT = BOX + "mx-auto max-w-full";
-        const HORZ = BOX + "mx-auto max-w-full";
+        const VERT = BOX + "self-center lg:self-auto mx-auto lg:mx-0 max-w-full";
+        const HORZ = BOX + "self-center lg:self-auto mx-auto lg:mx-0 max-w-full";
         const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
         function ytId(url) {
@@ -1438,13 +1441,30 @@
         let curVert = false;
         function sizeBox(v) {
             if (typeof v === 'boolean') curVert = v;
-            const vw = document.documentElement.clientWidth || window.innerWidth, vh = window.innerHeight, pad = vw < 640 ? 24 : 56;
+            const vw = document.documentElement.clientWidth || window.innerWidth, vh = window.innerHeight;
+            const pad = vw < 640 ? 24 : 56, side = vw >= 1024 ? 244 : 0;
             let w, h;
             if (curVert) { w = Math.max(200, Math.min(Math.max(320, Math.min(vh - 130, 680)) * 9 / 16, vw - pad)); h = w * 16 / 9; }
-            else { w = Math.max(260, Math.min(vw - pad, 1180, (vh - 190) * 16 / 9)); h = w * 9 / 16; }
+            else { w = Math.max(260, Math.min(vw - pad - side, 1180, (vh - 130) * 16 / 9)); h = w * 9 / 16; }
             modalBox.style.width = w + 'px'; modalBox.style.height = h + 'px';
-            infoBar.style.width = w + 'px'; infoBar.classList.toggle('wide', w >= 520);
+            modalSpacer.classList.toggle('lg:block', curVert);   // keeps a vertical video exactly centered
         }
+
+        // A fresh <iframe> per video: changing src on a loaded iframe adds browser-history entries (this made "close" need two taps)
+        let videoIframe = null;
+        function setVideo(src) {
+            const f = document.createElement('iframe');
+            f.id = 'videoIframe'; f.className = 'relative w-full h-full'; f.setAttribute('frameborder', '0');
+            f.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+            f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin'); f.allowFullscreen = true;
+            videoLoader.style.display = '';
+            f.onload = () => { videoLoader.style.display = 'none'; };
+            f.src = src;
+            if (videoIframe) videoIframe.remove();
+            modalBox.appendChild(f);
+            videoIframe = f;
+        }
+        function clearVideo() { if (videoIframe) { videoIframe.remove(); videoIframe = null; } }
         addEventListener('resize', () => { if (!videoModal.classList.contains('pointer-events-none')) sizeBox(); });
 
         function updateArrows() {
@@ -1507,9 +1527,7 @@
             relatedRow.scrollLeft = 0;
             requestAnimationFrame(updateArrows);
 
-            videoLoader.style.display = '';
-            videoIframe.onload = () => { videoLoader.style.display = 'none'; };
-            videoIframe.src = src;
+            setVideo(src);
 
             try { history[wasOpen ? 'replaceState' : 'pushState']({ app: 1, view: 'modal', cat: category }, ''); } catch (e) {}
             if (!wasOpen) {
@@ -1532,14 +1550,14 @@
             videoModal.classList.add('opacity-0', 'pointer-events-none');
             setTimeout(() => {
                 if (!videoModal.classList.contains('pointer-events-none')) return;
-                videoIframe.onload = null;
-                videoIframe.src = '';
+                clearVideo();
                 document.body.style.overflow = '';
             }, 400);
         }
         const modalOpen = () => !videoModal.classList.contains('pointer-events-none');
         function requestClose() {
-            if (history.state && history.state.view === 'modal') history.back(); else hideModal();
+            hideModal();
+            if (history.state && history.state.view === 'modal') { try { history.back(); } catch (e) {} }
         }
         closeVideoBtn.addEventListener('click', requestClose);
         videoModal.addEventListener('click', (e) => { if (e.target === videoModal || e.target.id === 'modalWrap') requestClose(); });
@@ -1556,7 +1574,8 @@
         function appBack() {
             if (modalOpen()) requestClose();
             else if (!videoListView.classList.contains('hidden')) {
-                if (history.state && history.state.view === 'list') history.back(); else goBackToCategories();
+                goBackToCategories();
+                if (history.state && history.state.view === 'list') { try { history.back(); } catch (e) {} }
             }
         }
         // two-finger horizontal swipe on trackpad (Chromium): deliberate, mostly-horizontal, long swipe only
