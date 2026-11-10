@@ -1,0 +1,27 @@
+{
+  "stories": [
+    {
+      "id": "on-set",
+      "title": "On Set",
+      "cover": "bts/on-set/cover.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "bts/on-set/01.jpg",
+          "caption": "Setup kamera sebelum take pertama"
+        },
+        {
+          "type": "video",
+          "src": "bts/on-set/02.mp4",
+          "caption": "Ambil gambar di lokasi",
+          "poster": "bts/on-set/02.jpg"
+        },
+        {
+          "type": "image",
+          "src": "bts/on-set/03.jpg",
+          "caption": "Cek framing bareng tim"
+        }
+      ]
+    }
+  ]
+}
