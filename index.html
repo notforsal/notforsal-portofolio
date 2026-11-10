@@ -320,6 +320,26 @@
             transform:translateY(-50%); transition:opacity .3s ease, background-color .3s, color .3s; }
         .rel-arrow:hover { background:#b5ee2c; color:#000; }
         .rel-arrow.is-off { opacity:0; pointer-events:none; }
+
+        /* ===== Behind the Scene ===== */
+        #btsTitle { font-weight:600 !important; letter-spacing:-.03em !important; }
+        .bts-ring { background:conic-gradient(from 200deg,#b5ee2c,#3f7a0c 45%,#b5ee2c); box-shadow:0 0 22px rgba(181,238,44,.22);
+            transition:transform .5s var(--ease), box-shadow .4s, background .3s; }
+        .bts-ring.seen { background:rgba(255,255,255,.22); box-shadow:none; }
+        .bts-item:hover .bts-ring { transform:scale(1.07); }
+        #storyViewer { position:fixed; inset:0; z-index:80; background:rgba(3,5,3,.94); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+            opacity:0; pointer-events:none; transition:opacity .35s ease; }
+        #storyViewer.show { opacity:1; pointer-events:auto; }
+        #storyStage { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) scale(.96); transition:transform .5s var(--ease);
+            box-shadow:0 30px 80px rgba(0,0,0,.6); }
+        #storyViewer.show #storyStage { transform:translate(-50%,-50%) scale(1); }
+        .story-arrow { position:absolute; z-index:5; top:50%; width:44px; height:44px; margin-top:-22px; border-radius:999px; display:none;
+            align-items:center; justify-content:center; background:rgba(10,12,8,.7); border:1px solid rgba(255,255,255,.22); color:#fff;
+            backdrop-filter:blur(10px); transition:opacity .3s, background-color .3s, color .3s; }
+        @media (min-width:768px) { .story-arrow { display:flex; } }
+        .story-arrow:hover { background:#b5ee2c; color:#000; }
+        .story-arrow.is-off { opacity:0; pointer-events:none; }
+        #storyPrev { left:28px; } #storyNext { right:28px; }
     </style>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="48x48">
@@ -2265,6 +2285,15 @@
         </div>
     </section>
 
+    <!-- Behind the Scene -->
+    <section id="bts" class="relative z-20 py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto scroll-blur-effect">
+        <div class="mb-10 border-b border-zinc-900 pb-4 scroll-reveal">
+            <h2 id="btsTitle" class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">Behind the <em class="serif-accent">Scene</em></h2>
+            <p class="text-zinc-400 font-medium text-xs md:text-sm tracking-wide">Proses, set, dan momen di balik layar</p>
+        </div>
+        <div id="btsRow" class="flex gap-5 md:gap-9 overflow-x-auto no-scrollbar pb-2"></div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="relative z-20 bg-black border-t border-zinc-900 text-white py-32 px-6 scroll-blur-effect">
         <div class="max-w-5xl mx-auto text-center">
@@ -2337,6 +2366,28 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="storyViewer" aria-hidden="true" role="dialog" aria-label="Behind the Scene">
+        <button id="storyPrev" type="button" class="interactive story-arrow is-off" aria-label="Cerita sebelumnya"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button id="storyNext" type="button" class="interactive story-arrow is-off" aria-label="Cerita berikutnya"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+        <div id="storyStage" class="bg-black select-none touch-none overflow-hidden sm:rounded-2xl sm:border sm:border-white/10">
+            <div id="storyMedia" class="absolute inset-0"></div>
+            <div class="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/70 to-transparent pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+            <div id="storyLoader" class="absolute inset-0 flex items-center justify-center pointer-events-none transition-opacity duration-300"><span class="w-8 h-8 rounded-full border-2 border-white/20 border-t-[#b5ee2c] animate-spin"></span></div>
+            <div id="storyBars" class="absolute top-3 inset-x-3 flex gap-1 pointer-events-none"></div>
+            <div class="absolute top-[22px] inset-x-3 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2.5 min-w-0 pointer-events-none">
+                    <img id="storyAvatar" class="w-9 h-9 rounded-full object-cover border border-white/30" alt="">
+                    <div class="min-w-0"><p id="storyTitle" class="text-white text-sm font-semibold truncate"></p><p id="storyMeta" class="text-white/60 text-[11px]"></p></div>
+                </div>
+                <div class="flex items-center gap-2 shrink-0">
+                    <button id="storyMute" type="button" class="interactive w-9 h-9 rounded-full bg-black/40 border border-white/25 text-white flex items-center justify-center backdrop-blur-md hover:bg-[#b5ee2c] hover:text-black transition-colors hidden" aria-label="Suara"><svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="22" x2="16" y1="9" y2="15"/><line x1="16" x2="22" y1="9" y2="15"/></svg></button>
+                    <button id="storyClose" type="button" class="interactive w-9 h-9 rounded-full bg-black/40 border border-white/25 text-white flex items-center justify-center backdrop-blur-md hover:bg-[#b5ee2c] hover:text-black transition-colors" aria-label="Tutup">✕</button>
+                </div>
+            </div>
+            <p id="storyCaption" class="absolute bottom-7 inset-x-5 text-white text-[15px] leading-snug font-medium pointer-events-none" style="text-shadow:0 1px 12px rgba(0,0,0,.6)"></p>
         </div>
     </div>
     <div id="swipeHint" aria-hidden="true"><svg viewBox="0 0 24 24" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></div>
@@ -2602,11 +2653,14 @@
         addEventListener('popstate', (e) => {
             lastPop = performance.now();
             const v = e.state && e.state.view;
+            if (window.btsApi && window.btsApi.isOpen() && v !== 'story') window.btsApi.hide();
             if (modalOpen() && v !== 'modal') hideModal();
             if (v !== 'list' && v !== 'modal' && !videoListView.classList.contains('hidden')) goBackToCategories();
         });
+        const btsOpen = () => !!(window.btsApi && window.btsApi.isOpen());
         function appBack() {
-            if (modalOpen()) requestClose();
+            if (btsOpen()) window.btsApi.close();
+            else if (modalOpen()) requestClose();
             else if (!videoListView.classList.contains('hidden')) {
                 goBackToCategories();
                 if (history.state && history.state.view === 'list') { try { history.back(); } catch (e) {} }
@@ -2617,7 +2671,7 @@
             document.documentElement.style.overscrollBehaviorX = 'none';
             let acc = 0, lastT = 0, cool = 0;
             addEventListener('wheel', (e) => {
-                if (!modalOpen() && videoListView.classList.contains('hidden')) return;
+                if (!btsOpen() && !modalOpen() && videoListView.classList.contains('hidden')) return;
                 if (e.target.closest && e.target.closest('#relatedRow')) return;
                 const now = performance.now();
                 if (now - lastT > 220) acc = 0;
@@ -2636,6 +2690,7 @@
             const reset = () => { on = false; hint.style.transition = 'transform .25s ease, opacity .25s ease'; hint.style.opacity = 0; hint.style.transform = 'translateX(-60px)'; };
             addEventListener('touchstart', (e) => {
                 if (e.touches.length !== 1) return;
+                if (btsOpen()) return;
                 if (!modalOpen() && videoListView.classList.contains('hidden')) return;
                 const t = e.touches[0];
                 if (t.clientX < 22 || t.clientX > 90) return;
@@ -2851,6 +2906,318 @@
             img.addEventListener('error', () => fixYtThumb(img, true));
             if (img.complete) fixYtThumb(img, img.naturalWidth === 0);
         });
+    })();
+    </script>
+<script>
+    // ===== Behind the Scene: Instagram-story style viewer. Content lives in /bts/bts.json =====
+    (() => {
+        const FALLBACK = {
+  "stories": [
+    {
+      "id": "on-set",
+      "title": "On Set",
+      "cover": "bts/on-set/cover.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "bts/on-set/01.jpg",
+          "caption": "Setup kamera sebelum take pertama"
+        },
+        {
+          "type": "video",
+          "src": "bts/on-set/02.mp4",
+          "caption": "Ambil gambar di lokasi",
+          "poster": "bts/on-set/02.jpg"
+        },
+        {
+          "type": "image",
+          "src": "bts/on-set/03.jpg",
+          "caption": "Cek framing bareng tim"
+        }
+      ]
+    },
+    {
+      "id": "editing",
+      "title": "Editing Room",
+      "cover": "bts/editing/cover.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "bts/editing/01.jpg",
+          "caption": "Susun cerita di timeline"
+        },
+        {
+          "type": "video",
+          "src": "bts/editing/02.mp4",
+          "caption": "Color grading malam hari",
+          "poster": "bts/editing/02.jpg"
+        },
+        {
+          "type": "image",
+          "src": "bts/editing/03.jpg",
+          "caption": "Review versi pertama"
+        }
+      ]
+    },
+    {
+      "id": "sound",
+      "title": "Sound",
+      "cover": "bts/sound/cover.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "bts/sound/01.jpg",
+          "caption": "Pasang boom & lavalier"
+        },
+        {
+          "type": "video",
+          "src": "bts/sound/02.mp4",
+          "caption": "Monitoring suara langsung",
+          "poster": "bts/sound/02.jpg"
+        },
+        {
+          "type": "image",
+          "src": "bts/sound/03.jpg",
+          "caption": "Ambil room tone"
+        }
+      ]
+    },
+    {
+      "id": "wedding",
+      "title": "Wedding Day",
+      "cover": "bts/wedding/cover.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "bts/wedding/01.jpg",
+          "caption": "Persiapan sebelum akad"
+        },
+        {
+          "type": "video",
+          "src": "bts/wedding/02.mp4",
+          "caption": "Momen di balik lensa",
+          "poster": "bts/wedding/02.jpg"
+        },
+        {
+          "type": "image",
+          "src": "bts/wedding/03.jpg",
+          "caption": "Detail kecil yang bikin cerita"
+        }
+      ]
+    },
+    {
+      "id": "event",
+      "title": "Event",
+      "cover": "bts/event/cover.jpg",
+      "items": [
+        {
+          "type": "image",
+          "src": "bts/event/01.jpg",
+          "caption": "Briefing crew sebelum acara"
+        },
+        {
+          "type": "video",
+          "src": "bts/event/02.mp4",
+          "caption": "Dokumentasi live",
+          "poster": "bts/event/02.jpg"
+        },
+        {
+          "type": "image",
+          "src": "bts/event/03.jpg",
+          "caption": "Wrap up & kumpul crew"
+        }
+      ]
+    }
+  ]
+};
+        const $ = id => document.getElementById(id);
+        const sec = $('bts'), row = $('btsRow'), viewer = $('storyViewer'), stage = $('storyStage'), media = $('storyMedia'), bars = $('storyBars'),
+              capEl = $('storyCaption'), titleEl = $('storyTitle'), metaEl = $('storyMeta'), avatar = $('storyAvatar'), loader = $('storyLoader'),
+              muteBtn = $('storyMute'), closeBtn = $('storyClose'), prevS = $('storyPrev'), nextS = $('storyNext');
+        if (!sec || !viewer) return;
+        const IMG_MS = 5000;
+        const ICON_OFF = muteBtn.innerHTML;
+        const ICON_ON = '<svg viewBox="0 0 24 24" class="w-[18px] h-[18px]" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>';
+        let stories = [], si = 0, ci = 0, el = null, isVideo = false, started = false, paused = false, open = false;
+        let elapsed = 0, last = 0, raf = 0, soundOn = false, held = false, failTimer = 0;
+
+        const esc = t => String(t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+        const getSeen = () => { try { return JSON.parse(localStorage.getItem('btsSeen') || '[]'); } catch (e) { return []; } };
+        const markSeen = id => { try { const s = getSeen(); if (!s.includes(id)) { s.push(id); localStorage.setItem('btsSeen', JSON.stringify(s)); } } catch (e) {} };
+        function paintSeen() {
+            const seen = getSeen();
+            [...row.children].forEach((b, i) => b.querySelector('.bts-ring').classList.toggle('seen', seen.includes(stories[i].id)));
+        }
+
+        function render() {
+            const seen = getSeen();
+            row.innerHTML = '';
+            stories.forEach((st, i) => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'bts-item interactive group shrink-0 w-[84px] md:w-[104px] text-center';
+                b.setAttribute('aria-label', 'Buka cerita ' + st.title);
+                b.innerHTML = `<span class="bts-ring block rounded-full p-[3px] ${seen.includes(st.id) ? 'seen' : ''}"><span class="block rounded-full bg-black p-[3px]"><img src="${esc(st.cover)}" alt="" loading="lazy" class="w-full aspect-square rounded-full object-cover"></span></span><span class="mt-2.5 block text-[11px] md:text-xs text-zinc-300 group-hover:text-white transition-colors truncate">${esc(st.title)}</span>`;
+                b.addEventListener('click', () => openStory(i));
+                row.appendChild(b);
+            });
+            sec.classList.toggle('hidden', !stories.length);
+        }
+        async function load() {
+            try {
+                const r = await fetch('bts/bts.json', { cache: 'no-cache' });
+                if (!r.ok) throw new Error(r.status);
+                stories = (await r.json()).stories || [];
+            } catch (e) {
+                console.warn('bts/bts.json not loaded, using built-in sample', e);
+                stories = FALLBACK.stories;
+            }
+            render();
+        }
+
+        function size() {
+            const vw = document.documentElement.clientWidth || innerWidth, vh = innerHeight;
+            let w, h;
+            if (vw < 640) { w = vw; h = vh; }
+            else { h = Math.min(vh - 40, 900); w = Math.min(h * 9 / 16, vw - 24); h = w * 16 / 9; }
+            stage.style.width = w + 'px'; stage.style.height = h + 'px';
+        }
+        const setBars = p => { const f = bars.children[ci]; if (f) f.firstChild.style.width = Math.min(100, p * 100) + '%'; };
+        function buildBars() {
+            bars.innerHTML = '';
+            for (let k = 0; k < stories[si].items.length; k++) {
+                const s = document.createElement('span');
+                s.className = 'h-[3px] flex-1 rounded-full bg-white/30 overflow-hidden';
+                s.innerHTML = '<i class="block h-full bg-white" style="width:' + (k < ci ? 100 : 0) + '%"></i>';
+                bars.appendChild(s);
+            }
+        }
+        function clearMedia() {
+            if (!el) return;
+            if (isVideo) { try { el.pause(); el.removeAttribute('src'); el.load(); } catch (e) {} }
+            el.remove(); el = null;
+        }
+        function begin() { clearTimeout(failTimer); if (started) return; started = true; loader.style.opacity = 0; last = performance.now(); }
+
+        function showClip() {
+            cancelAnimationFrame(raf); clearMedia(); started = false; elapsed = 0;
+            const st = stories[si], it = st.items[ci];
+            markSeen(st.id);
+            avatar.src = st.cover; titleEl.textContent = st.title; metaEl.textContent = (ci + 1) + ' / ' + st.items.length;
+            capEl.textContent = it.caption || ''; capEl.classList.toggle('hidden', !it.caption);
+            buildBars(); loader.style.opacity = 1;
+            isVideo = it.type === 'video';
+            muteBtn.classList.toggle('hidden', !isVideo);
+            muteBtn.innerHTML = soundOn ? ICON_ON : ICON_OFF;
+            prevS.classList.toggle('is-off', si === 0);
+            nextS.classList.toggle('is-off', si === stories.length - 1);
+            if (isVideo) {
+                el = document.createElement('video');
+                el.className = 'absolute inset-0 w-full h-full object-cover';
+                el.muted = !soundOn; el.playsInline = true; el.setAttribute('playsinline', ''); el.preload = 'auto';
+                if (it.poster) el.poster = it.poster;
+                el.addEventListener('playing', begin);
+                el.addEventListener('error', () => begin());
+                el.src = it.src; media.appendChild(el);
+                if (!paused) { const pr = el.play(); if (pr && pr.catch) pr.catch(() => {}); }
+            } else {
+                el = new Image(); el.className = 'absolute inset-0 w-full h-full object-cover'; el.draggable = false;
+                el.onload = begin; el.onerror = begin;
+                el.src = it.src; media.appendChild(el);
+            }
+            clearTimeout(failTimer); failTimer = setTimeout(begin, 6000);   // a missing or very slow file never freezes the viewer
+            const nx = st.items[ci + 1]; if (nx && nx.type === 'image') new Image().src = nx.src;   // preload next photo
+            last = performance.now(); raf = requestAnimationFrame(tick);
+        }
+        function tick(now) {
+            if (!open) return;
+            const dt = now - last; last = now;
+            if (started && !paused) {
+                elapsed += dt;
+                let p = elapsed / IMG_MS;
+                if (isVideo && el && el.duration && isFinite(el.duration)) p = el.currentTime / el.duration;
+                setBars(p);
+                if (p >= 1 || (isVideo && el && el.ended)) { next(); return; }
+            }
+            raf = requestAnimationFrame(tick);
+        }
+        function setPaused(v) {
+            paused = v;
+            if (isVideo && el) { if (v) el.pause(); else { const pr = el.play(); if (pr && pr.catch) pr.catch(() => {}); } }
+        }
+
+        function next() {
+            if (ci < stories[si].items.length - 1) { ci++; showClip(); }
+            else if (si < stories.length - 1) { si++; ci = 0; showClip(); }
+            else requestClose();
+        }
+        function prev() {
+            if (ci > 0) { ci--; showClip(); }
+            else if (si > 0) { si--; ci = 0; showClip(); }
+            else showClip();
+        }
+        function jumpStory(d) {
+            const n = si + d;
+            if (n < 0) return;
+            if (n >= stories.length) { requestClose(); return; }
+            si = n; ci = 0; showClip();
+        }
+
+        function openStory(i) {
+            si = i; ci = 0; paused = false; held = false; open = true; size();
+            viewer.classList.add('show'); viewer.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            try { history.pushState({ app: 1, view: 'story' }, ''); } catch (e) {}
+            showClip();
+        }
+        function hide() {
+            if (!open) return;
+            open = false; cancelAnimationFrame(raf); clearTimeout(failTimer); clearMedia();
+            viewer.classList.remove('show'); viewer.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            paintSeen();
+        }
+        function requestClose() {
+            hide();
+            if (history.state && history.state.view === 'story') { try { history.back(); } catch (e) {} }
+        }
+        window.btsApi = { isOpen: () => open, close: requestClose, hide };
+
+        // tap left = previous, tap right = next, hold = pause, swipe sideways = other story, swipe down = close
+        let down = false, sx = 0, sy = 0, holdTimer = 0;
+        stage.addEventListener('pointerdown', e => {
+            if (e.target.closest('button')) return;
+            down = true; held = false; sx = e.clientX; sy = e.clientY;
+            try { stage.setPointerCapture(e.pointerId); } catch (err) {}
+            clearTimeout(holdTimer);
+            holdTimer = setTimeout(() => { held = true; setPaused(true); }, 220);
+        });
+        stage.addEventListener('pointerup', e => {
+            if (!down) return;
+            down = false; clearTimeout(holdTimer);
+            const dx = e.clientX - sx, dy = e.clientY - sy;
+            if (held) { held = false; setPaused(false); return; }
+            if (dy > 90 && dy > Math.abs(dx)) { requestClose(); return; }
+            if (Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy)) { jumpStory(dx < 0 ? 1 : -1); return; }
+            const r = stage.getBoundingClientRect();
+            (e.clientX - r.left) < r.width * 0.33 ? prev() : next();
+        });
+        stage.addEventListener('pointercancel', () => { down = false; clearTimeout(holdTimer); if (held) { held = false; setPaused(false); } });
+        closeBtn.addEventListener('click', requestClose);
+        prevS.addEventListener('click', () => jumpStory(-1));
+        nextS.addEventListener('click', () => jumpStory(1));
+        muteBtn.addEventListener('click', () => { soundOn = !soundOn; if (el && isVideo) el.muted = !soundOn; muteBtn.innerHTML = soundOn ? ICON_ON : ICON_OFF; });
+        viewer.addEventListener('click', e => { if (e.target === viewer) requestClose(); });
+        addEventListener('keydown', e => {
+            if (!open) return;
+            if (e.key === 'Escape') requestClose();
+            else if (e.key === 'ArrowRight') next();
+            else if (e.key === 'ArrowLeft') prev();
+        });
+        addEventListener('resize', () => { if (open) size(); });
+        document.addEventListener('visibilitychange', () => { if (open && !held) setPaused(document.hidden); });
+
+        load();
     })();
     </script>
 </body>
