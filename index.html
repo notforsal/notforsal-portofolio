@@ -2291,7 +2291,11 @@
             <h2 id="btsTitle" class="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">Behind the <em class="serif-accent">Scene</em></h2>
             <p class="text-zinc-400 font-medium text-xs md:text-sm tracking-wide">Proses, set, dan momen di balik layar</p>
         </div>
-        <div id="btsRow" class="flex gap-5 md:gap-9 overflow-x-auto no-scrollbar pb-2"></div>
+        <div id="btsRow" class="hidden flex gap-5 md:gap-9 overflow-x-auto no-scrollbar pb-2"></div>
+        <div id="btsSoon" class="hidden scroll-reveal">
+            <p class="serif-accent text-6xl md:text-8xl text-white leading-none">Soon<span class="text-[#b5ee2c]">.</span></p>
+            <p class="mt-4 text-zinc-400 text-sm md:text-base">Cerita di balik layar sedang disiapkan.</p>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -2911,125 +2915,7 @@
 <script>
     // ===== Behind the Scene: Instagram-story style viewer. Content lives in /bts/bts.json =====
     (() => {
-        const FALLBACK = {
-  "stories": [
-    {
-      "id": "on-set",
-      "title": "On Set",
-      "cover": "bts/on-set/cover.jpg",
-      "items": [
-        {
-          "type": "image",
-          "src": "bts/on-set/01.jpg",
-          "caption": "Setup kamera sebelum take pertama"
-        },
-        {
-          "type": "video",
-          "src": "bts/on-set/02.mp4",
-          "caption": "Ambil gambar di lokasi",
-          "poster": "bts/on-set/02.jpg"
-        },
-        {
-          "type": "image",
-          "src": "bts/on-set/03.jpg",
-          "caption": "Cek framing bareng tim"
-        }
-      ]
-    },
-    {
-      "id": "editing",
-      "title": "Editing Room",
-      "cover": "bts/editing/cover.jpg",
-      "items": [
-        {
-          "type": "image",
-          "src": "bts/editing/01.jpg",
-          "caption": "Susun cerita di timeline"
-        },
-        {
-          "type": "video",
-          "src": "bts/editing/02.mp4",
-          "caption": "Color grading malam hari",
-          "poster": "bts/editing/02.jpg"
-        },
-        {
-          "type": "image",
-          "src": "bts/editing/03.jpg",
-          "caption": "Review versi pertama"
-        }
-      ]
-    },
-    {
-      "id": "sound",
-      "title": "Sound",
-      "cover": "bts/sound/cover.jpg",
-      "items": [
-        {
-          "type": "image",
-          "src": "bts/sound/01.jpg",
-          "caption": "Pasang boom & lavalier"
-        },
-        {
-          "type": "video",
-          "src": "bts/sound/02.mp4",
-          "caption": "Monitoring suara langsung",
-          "poster": "bts/sound/02.jpg"
-        },
-        {
-          "type": "image",
-          "src": "bts/sound/03.jpg",
-          "caption": "Ambil room tone"
-        }
-      ]
-    },
-    {
-      "id": "wedding",
-      "title": "Wedding Day",
-      "cover": "bts/wedding/cover.jpg",
-      "items": [
-        {
-          "type": "image",
-          "src": "bts/wedding/01.jpg",
-          "caption": "Persiapan sebelum akad"
-        },
-        {
-          "type": "video",
-          "src": "bts/wedding/02.mp4",
-          "caption": "Momen di balik lensa",
-          "poster": "bts/wedding/02.jpg"
-        },
-        {
-          "type": "image",
-          "src": "bts/wedding/03.jpg",
-          "caption": "Detail kecil yang bikin cerita"
-        }
-      ]
-    },
-    {
-      "id": "event",
-      "title": "Event",
-      "cover": "bts/event/cover.jpg",
-      "items": [
-        {
-          "type": "image",
-          "src": "bts/event/01.jpg",
-          "caption": "Briefing crew sebelum acara"
-        },
-        {
-          "type": "video",
-          "src": "bts/event/02.mp4",
-          "caption": "Dokumentasi live",
-          "poster": "bts/event/02.jpg"
-        },
-        {
-          "type": "image",
-          "src": "bts/event/03.jpg",
-          "caption": "Wrap up & kumpul crew"
-        }
-      ]
-    }
-  ]
-};
+        const FALLBACK = { "stories": [] };
         const $ = id => document.getElementById(id);
         const sec = $('bts'), row = $('btsRow'), viewer = $('storyViewer'), stage = $('storyStage'), media = $('storyMedia'), bars = $('storyBars'),
               capEl = $('storyCaption'), titleEl = $('storyTitle'), metaEl = $('storyMeta'), avatar = $('storyAvatar'), loader = $('storyLoader'),
@@ -3061,7 +2947,8 @@
                 b.addEventListener('click', () => openStory(i));
                 row.appendChild(b);
             });
-            sec.classList.toggle('hidden', !stories.length);
+            row.classList.toggle('hidden', !stories.length);
+            $('btsSoon').classList.toggle('hidden', !!stories.length);
         }
         async function load() {
             try {
